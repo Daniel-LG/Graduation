@@ -1,0 +1,1214 @@
+
+<!-- saved from url=(0131)http://webcache.googleusercontent.com/search?q=cache:http://www.bmrtech.com/uploadfile/image/whitepaper/mentorpaper_multcore_db.pdf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}pre { word-wrap:break-word; }pre { white-space:pre-wrap; }</style><style type="text/css">*{}</style><style type="text/css" id="c9a85796-6b86-421f-a4fe-d33b463cb87f">@keyframes fontbulger { 
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+.d0e639f3-4255-4b9b-8ffa-b8d6966ed917 { animation: fontbulger 0.2s ease-in-out 0s 2 alternate; border-radius: 0.2em; color: rgb(170, 170, 170); font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; position: relative; transition-duration: 0.5s; transition-property: color, background-color; transition-timing-function: ease-in-out; box-shadow: rgb(238, 238, 238) 0px 0px 12px; background-color: rgba(238, 238, 238, 0.8); }
+
+.default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce { color: rgb(0, 0, 0); box-shadow: rgb(255, 128, 128) 0px 0px 12px; background-color: rgba(255, 128, 128, 0.8); }
+
+.default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 { color: rgb(0, 0, 0); box-shadow: rgb(255, 210, 170) 0px 0px 12px; background-color: rgba(255, 210, 170, 0.8); }
+
+.default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 { color: rgb(0, 0, 0); box-shadow: rgb(255, 255, 170) 0px 0px 12px; background-color: rgba(255, 255, 170, 0.8); }
+
+.default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 { color: rgb(0, 0, 0); box-shadow: rgb(170, 255, 170) 0px 0px 12px; background-color: rgba(170, 255, 170, 0.8); }
+
+.default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b { color: rgb(0, 0, 0); box-shadow: rgb(170, 255, 255) 0px 0px 12px; background-color: rgba(170, 255, 255, 0.8); }
+
+.default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a { color: rgb(0, 0, 0); box-shadow: rgb(255, 170, 255) 0px 0px 12px; background-color: rgba(255, 170, 255, 0.8); }
+
+.default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a { color: rgb(255, 255, 255); box-shadow: rgb(119, 119, 119) 0px 0px 12px; background-color: rgba(119, 119, 119, 0.8); }
+
+</style></head><body bgcolor="#ffffff" vlink="blue" link="blue"><div id="google-cache-hdr" dir="ltr"><div>这是 <a href="http://www.bmrtech.com/uploadfile/image/whitepaper/mentorpaper_multcore_db.pdf" dir="ltr">http://www.bmrtech.com/uploadfile/image/whitepaper/mentorpaper_multcore_db.pdf</a> 的 HTML 档。<br> <b><font color="#0039b6">G</font> <font color="#c41200">o</font> <font color="#f3c518">o</font> <font color="#0039b6">g</font> <font color="#30a72f">l</font> <font color="#c41200">e</font></b> 在网路漫游时会自动将档案转换成 HTML 网页来储存。</div></div><div style="position:relative;margin:8px;">
+
+
+
+<meta name="Author" content="Nathan Sidwell, Vladimir Prus, Pedro Alves, Sandra Loosemore, Jim Blandy">
+<meta name="CreationDate" content="D:20111024111931-07&#39;00&#39;">
+<meta name="Creator" content="Adobe Acrobat Pro 9.4.6">
+<meta name="Keywords" content="Debugging, mult-threading, GNU debugger, breakpoint GDB, run control threading, breakpoint insertion,breakpoint removal, event loop, Sourcery tools, Mentor Graphics, Mentor Embedded">
+<meta name="ModDate" content="D:20111024115335-07&#39;00&#39;">
+<meta name="Producer" content="Adobe Acrobat Pro 9.4.6">
+<meta name="Subject" content="Open Source Software Tools, GDB">
+<meta name="Title" content="Non-stop Multi-threaded Debugging in GDB">
+<title>Non-stop Multi-threaded Debugging in GDB</title>
+
+<table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="1"><b>Page 1</b></a></font></td></tr></tbody></table><font size="3" color="#5a5758" face="Times"><span style="font-size:10px;font-family:Times;color:#5a5758">
+<div style="position:absolute;top:1215;left:292"><nobr>E</nobr></div>
+<div style="position:absolute;top:1215;left:320"><nobr>M</nobr></div>
+<div style="position:absolute;top:1215;left:351"><nobr>B</nobr></div>
+<div style="position:absolute;top:1215;left:379"><nobr>E</nobr></div>
+<div style="position:absolute;top:1215;left:407"><nobr>D</nobr></div>
+<div style="position:absolute;top:1215;left:437"><nobr>D</nobr></div>
+<div style="position:absolute;top:1215;left:466"><nobr>E</nobr></div>
+<div style="position:absolute;top:1215;left:494"><nobr>D</nobr></div>
+<div style="position:absolute;top:1215;left:548"><nobr>S</nobr></div>
+<div style="position:absolute;top:1215;left:576"><nobr>O</nobr></div>
+<div style="position:absolute;top:1215;left:606"><nobr>F</nobr></div>
+<div style="position:absolute;top:1215;left:633"><nobr>T</nobr></div>
+<div style="position:absolute;top:1215;left:661"><nobr>W</nobr></div>
+<div style="position:absolute;top:1215;left:693"><nobr>A</nobr></div>
+<div style="position:absolute;top:1215;left:722"><nobr>R</nobr></div>
+<div style="position:absolute;top:1215;left:750"><nobr>E</nobr></div>
+</span></font>
+<font size="4" color="#bdbcbc" face="Times"><span style="font-size:28px;font-family:Times;color:#bdbcbc">
+<div style="position:absolute;top:1200;left:837"><nobr>W</nobr></div>
+<div style="position:absolute;top:1158;left:837"><nobr>H</nobr></div>
+<div style="position:absolute;top:1122;left:837"><nobr>I</nobr></div>
+<div style="position:absolute;top:1094;left:837"><nobr>T</nobr></div>
+<div style="position:absolute;top:1061;left:837"><nobr>E</nobr></div>
+<div style="position:absolute;top:1028;left:837"><nobr>P</nobr></div>
+<div style="position:absolute;top:995;left:837"><nobr>A</nobr></div>
+<div style="position:absolute;top:960;left:837"><nobr>P</nobr></div>
+<div style="position:absolute;top:926;left:837"><nobr>E</nobr></div>
+<div style="position:absolute;top:893;left:837"><nobr>R</nobr></div>
+</span></font>
+<font size="3" color="#000000" face="Times"><span style="font-size:14px;font-family:Times;color:#000000">
+<div style="position:absolute;top:1259;left:598"><nobr><b>w w w . m e n t o r . c o m</b></nobr></div>
+</span></font>
+<font size="5" color="#231f20" face="Times"><span style="font-size:31px;font-family:Times;color:#231f20">
+<div style="position:absolute;top:449;left:162"><nobr>NON-STOP MULTI-THREADED</nobr></div>
+<div style="position:absolute;top:493;left:162"><nobr>DEBUGGING IN GDB  </nobr></div>
+</span></font>
+<font size="3" color="#231f20" face="Times"><span style="font-size:13px;font-family:Times;color:#231f20">
+<div style="position:absolute;top:637;left:162"><nobr>NATHAN SIDWELL, VLADIMIR PRUS, PEDRO ALVES, </nobr></div>
+<div style="position:absolute;top:655;left:162"><nobr>SANDRA LOOSEMORE, MENTOR GRAPHICS</nobr></div>
+<div style="position:absolute;top:691;left:162"><nobr>JIM BLANDY,  RED-BEAN.COM</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:1363;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="2"><b>Page 2</b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:23px;font-family:Times">
+<div style="position:absolute;top:1483;left:238"><nobr>Non-stop Multi-Threaded Debugging in GDB</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1534;left:140"><nobr>Nathan Sidwell, Vladimir Prus, Pedro Alves, Sandra Loosemore</nobr></div>
+<div style="position:absolute;top:1555;left:306"><nobr>CodeSourcery Inc</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:1577;left:140"><nobr>{nathan,vladimir,pedro,sandra}@codesourcery.com</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1534;left:686"><nobr>Jim Blandy</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:1556;left:644"><nobr>jimb@red-bean.com</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1640;left:97"><nobr>Abstract</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:1688;left:97"><nobr>When debugging a multi-threaded program, should a</nobr></div>
+<div style="position:absolute;top:1708;left:97"><nobr>debugger stop all threads when any thread stops, or</nobr></div>
+<div style="position:absolute;top:1728;left:97"><nobr>should it stop only those threads that have something to</nobr></div>
+<div style="position:absolute;top:1749;left:97"><nobr>report, like a breakpoint hit? When debugging a live</nobr></div>
+<div style="position:absolute;top:1769;left:97"><nobr>system,<span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="b5d24989-4bac-4d40-b667-1005dea39e12" tabindex="0"> the latter approach may be less intrusive<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span>, as</nobr></div>
+<div style="position:absolute;top:1789;left:97"><nobr>threads other than those under inspection can continue</nobr></div>
+<div style="position:absolute;top:1810;left:97"><nobr>to respond to external events. We have implemented</nobr></div>
+<div style="position:absolute;top:1830;left:97"><nobr>this behavior, which we call non-stop debugging, in the</nobr></div>
+<div style="position:absolute;top:1850;left:97"><nobr>GNU Debugger, GDB. We have adapted GDB’s control</nobr></div>
+<div style="position:absolute;top:1870;left:97"><nobr>commands, strengthened GDB’s event loop, extended</nobr></div>
+<div style="position:absolute;top:1891;left:97"><nobr>GDB’s remote protocol, and implemented new tech-</nobr></div>
+<div style="position:absolute;top:1911;left:97"><nobr>niques for inserting, removing, and stepping past break-</nobr></div>
+<div style="position:absolute;top:1931;left:97"><nobr>points.</nobr></div>
+<div style="position:absolute;top:1968;left:97"><nobr>This project lifts long-standing restrictions in GDB’s</nobr></div>
+<div style="position:absolute;top:1988;left:97"><nobr>thread support, using a number of interesting tech-</nobr></div>
+<div style="position:absolute;top:2008;left:97"><nobr>niques. It opens a way to supporting multi-process and</nobr></div>
+<div style="position:absolute;top:2029;left:97"><nobr>multi-core debugging.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:2083;left:97"><nobr>1 Background</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:2130;left:97"><nobr>GDB[1] is the debugger of choice for the GNU</nobr></div>
+<div style="position:absolute;top:2150;left:97"><nobr>project[2]. It started life as a debugger for single-</nobr></div>
+<div style="position:absolute;top:2170;left:97"><nobr>threaded programs. In its original model, when debug-</nobr></div>
+<div style="position:absolute;top:2191;left:97"><nobr>ging a target program, either the target program is run-</nobr></div>
+<div style="position:absolute;top:2211;left:97"><nobr>ning and GDB waits on it, or GDB is running (or wait-</nobr></div>
+<div style="position:absolute;top:2231;left:97"><nobr>ing for user input) and the target program is halted. This</nobr></div>
+<div style="position:absolute;top:2252;left:97"><nobr>model simplifies control of the target program, because</nobr></div>
+<div style="position:absolute;top:2272;left:97"><nobr>GDB does not have to contend with target state changes</nobr></div>
+<div style="position:absolute;top:2292;left:97"><nobr>except at the well-defined point of having the target run.</nobr></div>
+<div style="position:absolute;top:2329;left:97"><nobr>As multi-threaded applications arrived, GDB was ex-</nobr></div>
+<div style="position:absolute;top:2349;left:97"><nobr>tended to debug them. The first implementation of</nobr></div>
+<div style="position:absolute;top:2369;left:97"><nobr>threading support was for LynxOS in 1993. The changes</nobr></div>
+<div style="position:absolute;top:2390;left:97"><nobr>made were straightforward: GDB’s program state was</nobr></div>
+<div style="position:absolute;top:2410;left:97"><nobr>augmented with a thread identifier, and commands</nobr></div>
+<div style="position:absolute;top:2430;left:97"><nobr>added to switch user control between available threads.</nobr></div>
+<div style="position:absolute;top:2451;left:97"><nobr>What was not changed was the underlying run control</nobr></div>
+<div style="position:absolute;top:1642;left:489"><nobr>model in which either GDB or the target is running.</nobr></div>
+<div style="position:absolute;top:1662;left:489"><nobr>When GDB examines the state of any particular thread,</nobr></div>
+<div style="position:absolute;top:1682;left:489"><nobr>all other threads are also stopped.</nobr></div>
+<div style="position:absolute;top:1716;left:489"><nobr>Later, in 1999, additional run control was added so that,</nobr></div>
+<div style="position:absolute;top:1736;left:489"><nobr>when continuing the thread of interest, one can select</nobr></div>
+<div style="position:absolute;top:1757;left:489"><nobr>whether other threads are held stopped, or whether they</nobr></div>
+<div style="position:absolute;top:1777;left:489"><nobr>continue too. The fundamental restriction that the target</nobr></div>
+<div style="position:absolute;top:1797;left:489"><nobr>is stopped when GDB has control remained unchanged.</nobr></div>
+<div style="position:absolute;top:1818;left:489"><nobr>To distinguish this existing behavior from the new func-</nobr></div>
+<div style="position:absolute;top:1838;left:489"><nobr>tionality we have implemented, we have coined the term</nobr></div>
+<div style="position:absolute;top:1858;left:489"><nobr>all-stop for it.</nobr></div>
+<div style="position:absolute;top:1892;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="ae468424-b5c3-4674-99c1-64ea276b80d4" tabindex="0">For some debugging uses, GDB’s all-stop behavior is<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:1912;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">desired.</span> The relative schedules of independent threads is</nobr></div>
+<div style="position:absolute;top:1933;left:489"><nobr>disturbed as little as possible — by the simple expedient</nobr></div>
+<div style="position:absolute;top:1953;left:489"><nobr>of stopping all of them. As discussed below the sched-</nobr></div>
+<div style="position:absolute;top:1973;left:489"><nobr>ules are not completely undisturbed though. In other</nobr></div>
+<div style="position:absolute;top:1994;left:489"><nobr>debugging uses, the all-stop behavior is an undesirable</nobr></div>
+<div style="position:absolute;top:2014;left:489"><nobr>perturbation to the target program — completely sep-</nobr></div>
+<div style="position:absolute;top:2034;left:489"><nobr>arate threads have their scheduling interrupted. Users</nobr></div>
+<div style="position:absolute;top:2055;left:489"><nobr>desire the ability to debug live systems with minimal in-</nobr></div>
+<div style="position:absolute;top:2075;left:489"><nobr>trusion. In particular, when parts of a multi-threaded</nobr></div>
+<div style="position:absolute;top:2095;left:489"><nobr>program have real-time constraints it becomes impossi-</nobr></div>
+<div style="position:absolute;top:2116;left:489"><nobr>ble to debug even the non-real-time threads because the</nobr></div>
+<div style="position:absolute;top:2136;left:489"><nobr>system is too badly disturbed.</nobr></div>
+<div style="position:absolute;top:2170;left:489"><nobr>To address this problem, we have implemented a<span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="ad7dc445-7105-44de-90b5-5cda645aef31" tabindex="0"> non-<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:2190;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">stop debugging mode</span> in GDB. In this mode, only the</nobr></div>
+<div style="position:absolute;top:2210;left:489"><nobr>thread of interest is held stopped, whilst its state is being</nobr></div>
+<div style="position:absolute;top:2231;left:489"><nobr>manipulated by the user. Other threads continue execu-</nobr></div>
+<div style="position:absolute;top:2251;left:489"><nobr>tion until they encounter an event that GDB needs to be</nobr></div>
+<div style="position:absolute;top:2271;left:489"><nobr>aware of. Implementing this required changes to:</nobr></div>
+<div style="position:absolute;top:2319;left:505"><nobr>• Breakpoint management</nobr></div>
+<div style="position:absolute;top:2351;left:505"><nobr>• Single stepping</nobr></div>
+<div style="position:absolute;top:2384;left:505"><nobr>• Event loop</nobr></div>
+<div style="position:absolute;top:2417;left:505"><nobr>• Serial protocol</nobr></div>
+<div style="position:absolute;top:2449;left:505"><nobr>• MI interface</nobr></div>
+<div style="position:absolute;top:2495;left:471"><nobr>1</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:2551;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="3"><b>Page 3</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:2643;left:97"><nobr>These changes, in addition to allowing non-stop debug-</nobr></div>
+<div style="position:absolute;top:2663;left:97"><nobr>ging of a single multi-threaded program, enable other</nobr></div>
+<div style="position:absolute;top:2683;left:97"><nobr>modes of operation, which we discuss in Section 10.</nobr></div>
+<div style="position:absolute;top:2719;left:97"><nobr>Our ultimate target of interest is a 32-bit x86 system, ac-</nobr></div>
+<div style="position:absolute;top:2740;left:97"><nobr>cessed remotely via the GDB serial protocol. We imple-</nobr></div>
+<div style="position:absolute;top:2760;left:97"><nobr>mented non-stop debugging for native 32-bit x86 Linux</nobr></div>
+<div style="position:absolute;top:2780;left:97"><nobr>systems in addition to extending the serial protocol for</nobr></div>
+<div style="position:absolute;top:2801;left:97"><nobr>remote debugging. The gdbserver program has not</nobr></div>
+<div style="position:absolute;top:2821;left:97"><nobr>yet been updated.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:2874;left:97"><nobr>2 Run Control</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:2921;left:97"><nobr>In order to debug a target system, GDB requires very</nobr></div>
+<div style="position:absolute;top:2941;left:97"><nobr>few fundamental operations:</nobr></div>
+<div style="position:absolute;top:2995;left:114"><nobr>• Read and write registers</nobr></div>
+<div style="position:absolute;top:3030;left:114"><nobr>• Read and write memory</nobr></div>
+<div style="position:absolute;top:3065;left:114"><nobr>• Single step target</nobr></div>
+<div style="position:absolute;top:3100;left:114"><nobr>• Run target</nobr></div>
+<div style="position:absolute;top:3156;left:97"><nobr>For the purposes of this discussion, the latter two are the</nobr></div>
+<div style="position:absolute;top:3176;left:97"><nobr>important parts of run control. When the target com-</nobr></div>
+<div style="position:absolute;top:3197;left:97"><nobr>pletes a single step, or stops after running freely, it re-</nobr></div>
+<div style="position:absolute;top:3217;left:97"><nobr>ports an event to GDB. These events let GDB know that</nobr></div>
+<div style="position:absolute;top:3237;left:97"><nobr>the target has stopped because of some condition – sin-</nobr></div>
+<div style="position:absolute;top:3258;left:97"><nobr>gle step complete, breakpoint hit, segmentation fault.</nobr></div>
+<div style="position:absolute;top:3278;left:97"><nobr>The events are the target-side responses that GDB pro-</nobr></div>
+<div style="position:absolute;top:3298;left:97"><nobr>cesses for run control.</nobr></div>
+<div style="position:absolute;top:3334;left:97"><nobr>This level of run control is sufficient to implement</nobr></div>
+<div style="position:absolute;top:3355;left:97"><nobr>stepi, continue and break commands directly.</nobr></div>
+<div style="position:absolute;top:3375;left:97"><nobr>More advanced commands are synthesized from these</nobr></div>
+<div style="position:absolute;top:3395;left:97"><nobr>basic operations in a multi-action sequence. For in-</nobr></div>
+<div style="position:absolute;top:3416;left:97"><nobr>stance the nexti command records the current frame</nobr></div>
+<div style="position:absolute;top:3436;left:97"><nobr>identification, performs a single step and then deter-</nobr></div>
+<div style="position:absolute;top:3456;left:97"><nobr>mines the now-current frame identification.<font style="font-size:9px">1</font></nobr></div>
+<div style="position:absolute;top:3456;left:422"><nobr>If the</nobr></div>
+<div style="position:absolute;top:3476;left:97"><nobr>frames are different, a procedure has been entered. GDB</nobr></div>
+<div style="position:absolute;top:3497;left:97"><nobr>then determines the return location (by target-dependent</nobr></div>
+<div style="position:absolute;top:3517;left:97"><nobr>means) and inserts a temporary breakpoint at that loca-</nobr></div>
+<div style="position:absolute;top:3537;left:97"><nobr>tion. Then it runs the target, which stops when a break-</nobr></div>
+<div style="position:absolute;top:3558;left:97"><nobr>point is hit. If the temporary breakpoint caused the stop,</nobr></div>
+</span></font>
+<font size="2" face="Times"><span style="font-size:8px;font-family:Times">
+<div style="position:absolute;top:3588;left:115"><nobr>1<font style="font-size:11px">To avoid confusion between the GDB step command and the</font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:11px;font-family:Times">
+<div style="position:absolute;top:3608;left:97"><nobr>target-side single step action, we refer to the former with ‘step’</nobr></div>
+<div style="position:absolute;top:3624;left:97"><nobr>and the latter with ‘single step’. Similarly, we distinguish GDB’s</nobr></div>
+<div style="position:absolute;top:3641;left:97"><nobr>continue command and the target-side run action.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:2643;left:489"><nobr>the nexti command has completed. If another break-</nobr></div>
+<div style="position:absolute;top:2663;left:489"><nobr>point is hit (because the called routine hit a user-inserted</nobr></div>
+<div style="position:absolute;top:2683;left:489"><nobr>breakpoint), the nexti command is abandoned. In</nobr></div>
+<div style="position:absolute;top:2704;left:489"><nobr>both cases the temporary breakpoint is removed.</nobr></div>
+<div style="position:absolute;top:2736;left:489"><nobr>GDB can even debug targets that cannot single step. It</nobr></div>
+<div style="position:absolute;top:2756;left:489"><nobr>does this by inserting temporary breakpoints at the next</nobr></div>
+<div style="position:absolute;top:2777;left:489"><nobr>instruction after the one being single stepped. Determin-</nobr></div>
+<div style="position:absolute;top:2797;left:489"><nobr>ing the next instruction requires target-specific code to</nobr></div>
+<div style="position:absolute;top:2817;left:489"><nobr>decode flow control instructions. We do not discuss this</nobr></div>
+<div style="position:absolute;top:2838;left:489"><nobr>kind of target further.</nobr></div>
+<div style="position:absolute;top:2870;left:489"><nobr>GDB uses internal breakpoints to detect certain actions</nobr></div>
+<div style="position:absolute;top:2890;left:489"><nobr>such as longjmp, exception handling, dynamic load-</nobr></div>
+<div style="position:absolute;top:2910;left:489"><nobr>ing and, as described below, threading operations. The</nobr></div>
+<div style="position:absolute;top:2932;left:489"><nobr>longjmp and exception handling detection is neces-</nobr></div>
+<div style="position:absolute;top:2951;left:489"><nobr>sary to catch when next skips a routine that calls</nobr></div>
+<div style="position:absolute;top:2972;left:489"><nobr>longjmp or throws an exception — it would be un-</nobr></div>
+<div style="position:absolute;top:2992;left:489"><nobr>pleasant for the next command not to terminate.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:3034;left:489"><nobr>3 Threading</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:3075;left:489"><nobr>To support threading, GDB has to interact with the</nobr></div>
+<div style="position:absolute;top:3095;left:489"><nobr>threading library on the target. Additional operations</nobr></div>
+<div style="position:absolute;top:3116;left:489"><nobr>required are:</nobr></div>
+<div style="position:absolute;top:3158;left:505"><nobr>• List available threads</nobr></div>
+<div style="position:absolute;top:3190;left:505"><nobr>• Select active thread</nobr></div>
+<div style="position:absolute;top:3222;left:505"><nobr>• Single step one thread</nobr></div>
+<div style="position:absolute;top:3253;left:505"><nobr>• Run one thread</nobr></div>
+<div style="position:absolute;top:3285;left:505"><nobr>• Run all threads</nobr></div>
+<div style="position:absolute;top:3330;left:489"><nobr>GDB’s serial protocol can describe more flexible run</nobr></div>
+<div style="position:absolute;top:3351;left:489"><nobr>control than that described here, but the extra function-</nobr></div>
+<div style="position:absolute;top:3371;left:489"><nobr>ality is not used by GDB at present.</nobr></div>
+<div style="position:absolute;top:3403;left:489"><nobr>The mechanism GDB uses to detect thread creation and</nobr></div>
+<div style="position:absolute;top:3424;left:489"><nobr>destruction events is specific to the target system. For</nobr></div>
+<div style="position:absolute;top:3444;left:489"><nobr>instance, with Linux the target must use a special thread-</nobr></div>
+<div style="position:absolute;top:3464;left:489"><nobr>ing library with debug capabilities, thread_db. GDB</nobr></div>
+<div style="position:absolute;top:3484;left:489"><nobr>uses an internal breakpoint inserted at a special loca-</nobr></div>
+<div style="position:absolute;top:3505;left:489"><nobr>tion in the threading library. When this breakpoint is hit,</nobr></div>
+<div style="position:absolute;top:3525;left:489"><nobr>GDB calls a special function provided by the threading</nobr></div>
+<div style="position:absolute;top:3545;left:489"><nobr>library to retrieve an event message.</nobr></div>
+<div style="position:absolute;top:3578;left:489"><nobr>Run control is made more complex because of the issue</nobr></div>
+<div style="position:absolute;top:3598;left:489"><nobr>of which threads are single stepped or run. This is con-</nobr></div>
+<div style="position:absolute;top:3618;left:489"><nobr>trolled GDB’s scheduler locking parameter. Its values</nobr></div>
+<div style="position:absolute;top:3639;left:489"><nobr>are:</nobr></div>
+<div style="position:absolute;top:3683;left:471"><nobr>2</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:3739;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="4"><b>Page 4</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:3832;left:92"><nobr>off All threads are run whenever the thread of interest</nobr></div>
+<div style="position:absolute;top:3851;left:130"><nobr>is single stepped or run.</nobr></div>
+<div style="position:absolute;top:3884;left:102"><nobr>on Only the thread of interest is single stepped or run.</nobr></div>
+<div style="position:absolute;top:3904;left:130"><nobr>Other threads remain stopped.</nobr></div>
+<div style="position:absolute;top:3937;left:82"><nobr>step Single stepping only steps the thread of interest.</nobr></div>
+<div style="position:absolute;top:3956;left:130"><nobr>All threads are run whenever the thread of interest</nobr></div>
+<div style="position:absolute;top:3977;left:130"><nobr>is run.</nobr></div>
+<div style="position:absolute;top:4023;left:97"><nobr>Note that scheduler locking supports more than the min-</nobr></div>
+<div style="position:absolute;top:4044;left:97"><nobr>imum additional target run control actions described</nobr></div>
+<div style="position:absolute;top:4064;left:97"><nobr>above. Some targets cannot offer all the variations that</nobr></div>
+<div style="position:absolute;top:4084;left:97"><nobr>scheduler locking allows.</nobr></div>
+<div style="position:absolute;top:4117;left:97"><nobr>GDB commands that perform a series of single steps or</nobr></div>
+<div style="position:absolute;top:4138;left:97"><nobr>runs at the target level may terminate early if another</nobr></div>
+<div style="position:absolute;top:4158;left:97"><nobr>thread hits a breakpoint. This can only happen when</nobr></div>
+<div style="position:absolute;top:4178;left:97"><nobr>scheduler locking is off or step. For instance, for a</nobr></div>
+<div style="position:absolute;top:4199;left:97"><nobr>next operation when a procedure is entered, GDB in-</nobr></div>
+<div style="position:absolute;top:4219;left:97"><nobr>serts a temporary breakpoint at the return location and</nobr></div>
+<div style="position:absolute;top:4239;left:97"><nobr>runs the target. During that time, other threads run, un-</nobr></div>
+<div style="position:absolute;top:4259;left:97"><nobr>less scheduler locking is on. Should one of them hit</nobr></div>
+<div style="position:absolute;top:4280;left:97"><nobr>a breakpoint before the thread whose procedure is be-</nobr></div>
+<div style="position:absolute;top:4300;left:97"><nobr>ing skipped past finishes, that other breakpoint is re-</nobr></div>
+<div style="position:absolute;top:4320;left:97"><nobr>ported. The temporary breakpoint remains active and</nobr></div>
+<div style="position:absolute;top:4341;left:97"><nobr>the next operation completes once it is hit. If another</nobr></div>
+<div style="position:absolute;top:4361;left:97"><nobr>breakpoint is hit in the thread that GDB is performing</nobr></div>
+<div style="position:absolute;top:4381;left:97"><nobr>the next operation for, then the temporary breakpoint</nobr></div>
+<div style="position:absolute;top:4402;left:97"><nobr>is removed and the next operation abandoned, just as</nobr></div>
+<div style="position:absolute;top:4422;left:97"><nobr>it is in the single-threaded case described above. Thus</nobr></div>
+<div style="position:absolute;top:4442;left:97"><nobr>GDB keeps state describing each thread’s outstanding</nobr></div>
+<div style="position:absolute;top:4463;left:97"><nobr>multiple-action operation, and processes them indepen-</nobr></div>
+<div style="position:absolute;top:4483;left:97"><nobr>dently.</nobr></div>
+<div style="position:absolute;top:4516;left:97"><nobr>There is one action where exactly one thread must be</nobr></div>
+<div style="position:absolute;top:4536;left:97"><nobr>single stepped, and that is when continuing from a</nobr></div>
+<div style="position:absolute;top:4557;left:97"><nobr>breakpoint. Here the original instruction must be writ-</nobr></div>
+<div style="position:absolute;top:4577;left:97"><nobr>ten back and the target single stepped. Once the break-</nobr></div>
+<div style="position:absolute;top:4597;left:97"><nobr>pointed instruction has been stepped over, the break-</nobr></div>
+<div style="position:absolute;top:4618;left:97"><nobr>point can be reinserted. Clearly, when the breakpoint</nobr></div>
+<div style="position:absolute;top:4638;left:97"><nobr>is not inserted, other threads must not execute because</nobr></div>
+<div style="position:absolute;top:4658;left:97"><nobr>they may be executing the same code and consequently</nobr></div>
+<div style="position:absolute;top:4679;left:97"><nobr>not hit the breakpoint the user placed there.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:4724;left:97"><nobr>4 GDB Implementation Interfaces</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:4766;left:97"><nobr>GDB abstracts the architecture and system-specific fea-</nobr></div>
+<div style="position:absolute;top:4786;left:97"><nobr>tures of the target in an architecture structure. This con-</nobr></div>
+<div style="position:absolute;top:4806;left:97"><nobr>tains numerous hooks to handle stack unwinding, spec-</nobr></div>
+<div style="position:absolute;top:4827;left:97"><nobr>ify register types and contents, determine breakpoint</nobr></div>
+<div style="position:absolute;top:3831;left:489"><nobr>formats and the like. Additional hooks must be added to</nobr></div>
+<div style="position:absolute;top:3851;left:489"><nobr>support the new stepping mechanism described below.</nobr></div>
+<div style="position:absolute;top:3885;left:489"><nobr>The type of architecture and target operating system is</nobr></div>
+<div style="position:absolute;top:3905;left:489"><nobr>determined when GDB is configured and built. For ex-</nobr></div>
+<div style="position:absolute;top:3925;left:489"><nobr>ample, it is not possible to use a GDB built for ARM-</nobr></div>
+<div style="position:absolute;top:3946;left:489"><nobr>Linux and use it to debug a program running on some</nobr></div>
+<div style="position:absolute;top:3966;left:489"><nobr>other ARM operating system.<font style="font-size:9px">2</font></nobr></div>
+<div style="position:absolute;top:4000;left:489"><nobr>GDB abstracts the interface to the target with a tar-</nobr></div>
+<div style="position:absolute;top:4020;left:489"><nobr>get control stack. This allows a single GDB to debug</nobr></div>
+<div style="position:absolute;top:4040;left:489"><nobr>a program that is running on local hardware, remote</nobr></div>
+<div style="position:absolute;top:4061;left:489"><nobr>hardware, internal or external simulator, or even a post-</nobr></div>
+<div style="position:absolute;top:4081;left:489"><nobr>mortem analysis of a core file.</nobr></div>
+<div style="position:absolute;top:4115;left:489"><nobr>Two target control instances are relevant for this dis-</nobr></div>
+<div style="position:absolute;top:4135;left:489"><nobr>cussion. One allows native debugging of another pro-</nobr></div>
+<div style="position:absolute;top:4155;left:489"><nobr>cess running on the same x86-Linux system. It uses the</nobr></div>
+<div style="position:absolute;top:4177;left:489"><nobr>ptrace[4] interface. The other allows debugging of</nobr></div>
+<div style="position:absolute;top:4196;left:489"><nobr>a process running on a remote system. It uses the GDB</nobr></div>
+<div style="position:absolute;top:4216;left:489"><nobr>serial protocol, over which transactions are serialized. A</nobr></div>
+<div style="position:absolute;top:4237;left:489"><nobr>process on the remote system translates the serial proto-</nobr></div>
+<div style="position:absolute;top:4257;left:489"><nobr>col into the appropriate run control actions for that sys-</nobr></div>
+<div style="position:absolute;top:4277;left:489"><nobr>tem. In the case of debugging a remote x86-Linux sys-</nobr></div>
+<div style="position:absolute;top:4298;left:489"><nobr>tem, this is done by gdbserver, which also uses the</nobr></div>
+<div style="position:absolute;top:4319;left:489"><nobr>ptrace system call, but on the remote system. Other</nobr></div>
+<div style="position:absolute;top:4338;left:489"><nobr>target systems may embed the GDB protocol engine di-</nobr></div>
+<div style="position:absolute;top:4359;left:489"><nobr>rectly into the kernel. A simulator may implement the</nobr></div>
+<div style="position:absolute;top:4379;left:489"><nobr>GDB protocol as a mechanism for accessing the simu-</nobr></div>
+<div style="position:absolute;top:4399;left:489"><nobr>lated program,<span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="ff826b6b-3c8d-4d40-9274-43248032fc46" tabindex="0"> for instance QEMU[<span class="close"></span></span>5].</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:4446;left:489"><nobr>5 Breakpoint Persistence</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:4489;left:489"><nobr>In the traditional all-stop run control model, when GDB</nobr></div>
+<div style="position:absolute;top:4510;left:489"><nobr>has stopped a target program, it removes all the break-</nobr></div>
+<div style="position:absolute;top:4530;left:489"><nobr>points from the target. This allows simplified memory</nobr></div>
+<div style="position:absolute;top:4550;left:489"><nobr>access as there is no need to consider the backing store</nobr></div>
+<div style="position:absolute;top:4571;left:489"><nobr>for patched breakpoints. It also simplifies single step-</nobr></div>
+<div style="position:absolute;top:4591;left:489"><nobr>ping of the target as there is no need to determine if a</nobr></div>
+<div style="position:absolute;top:4611;left:489"><nobr>breakpointed location is being single stepped. Clearly,</nobr></div>
+<div style="position:absolute;top:4631;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="eaf3e541-c498-4f53-b92a-f0f8420a2ce5" tabindex="0">for non-stop debugging, all breakpoints must be inserted<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:4652;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">all the time.</span> Otherwise other threads would not stop</nobr></div>
+<div style="position:absolute;top:4672;left:489"><nobr>when they hit a breakpoint location.</nobr></div>
+<div style="position:absolute;top:4716;left:489"><nobr>5.1 Breakpoint Insertion and Removal</nobr></div>
+<div style="position:absolute;top:4760;left:489"><nobr>When breakpoints are permanently inserted, it is nec-</nobr></div>
+<div style="position:absolute;top:4781;left:489"><nobr>essary for the breakpoint management commands, such</nobr></div>
+</span></font>
+<font size="2" face="Times"><span style="font-size:8px;font-family:Times">
+<div style="position:absolute;top:4809;left:507"><nobr>2<font style="font-size:11px">There is some work to allow GDB to debug multiple target</font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:11px;font-family:Times">
+<div style="position:absolute;top:4829;left:489"><nobr>types, but this is not generalized for all possible target types.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:4871;left:471"><nobr>3</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:4927;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="5"><b>Page 5</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:5019;left:97"><nobr>as break, delete, enable and disable to be ac-</nobr></div>
+<div style="position:absolute;top:5039;left:97"><nobr>tive immediately. Special care must be taken with <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="aa17c8b4-74b1-48d4-8bdc-c5cd16125fbc" tabindex="0">mul-<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:5059;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">tiple breakpoints at the same location</span>. If one of them</nobr></div>
+<div style="position:absolute;top:5080;left:97"><nobr>is disabled or deleted, GDB cannot even momentarily</nobr></div>
+<div style="position:absolute;top:5100;left:97"><nobr>remove the breakpoint. GDB’s breakpoint code was</nobr></div>
+<div style="position:absolute;top:5120;left:97"><nobr>formerly distributed in several places. We redesigned</nobr></div>
+<div style="position:absolute;top:5141;left:97"><nobr>breakpoint management to use a single new function,</nobr></div>
+<div style="position:absolute;top:5162;left:97"><nobr>update_global_location_list, that is called</nobr></div>
+<div style="position:absolute;top:5181;left:97"><nobr>for all breakpoint creation, destruction or altering. The</nobr></div>
+<div style="position:absolute;top:5202;left:97"><nobr>function computes the change set and then applies it in a</nobr></div>
+<div style="position:absolute;top:5222;left:97"><nobr>single operation. This redesign even fixed some break-</nobr></div>
+<div style="position:absolute;top:5242;left:97"><nobr>point bugs in all-stop mode.</nobr></div>
+<div style="position:absolute;top:5283;left:97"><nobr>If breakpoints are inserted when GDB has control, care</nobr></div>
+<div style="position:absolute;top:5303;left:97"><nobr>must be taken when reading memory locations. It is nec-</nobr></div>
+<div style="position:absolute;top:5324;left:97"><nobr>essary to have all memory accesses go via routines that</nobr></div>
+<div style="position:absolute;top:5344;left:97"><nobr>maintain patched breakpoint backing storage, and allow</nobr></div>
+<div style="position:absolute;top:5364;left:97"><nobr>it to do the necessary caching. GDB has such a routine,</nobr></div>
+<div style="position:absolute;top:5385;left:97"><nobr>target_xfer_partial, and it is used for nearly</nobr></div>
+<div style="position:absolute;top:5405;left:97"><nobr>all memory accesses. Self-modifying code presents a</nobr></div>
+<div style="position:absolute;top:5425;left:97"><nobr>problem with breakpoint removal, as the breakpoint lo-</nobr></div>
+<div style="position:absolute;top:5446;left:97"><nobr>cation may have been overwritten by the program it-</nobr></div>
+<div style="position:absolute;top:5466;left:97"><nobr>self. GDB does not usually check for this situation,</nobr></div>
+<div style="position:absolute;top:5486;left:97"><nobr>because it is rare, and the performance impact of re-</nobr></div>
+<div style="position:absolute;top:5507;left:97"><nobr>reading each breakpoint location before restoring the</nobr></div>
+<div style="position:absolute;top:5527;left:97"><nobr>original contents is too high. Unfortunately both Pow-</nobr></div>
+<div style="position:absolute;top:5547;left:97"><nobr>erPC and MIPS have writable PLTs, where the PLT slot</nobr></div>
+<div style="position:absolute;top:5567;left:97"><nobr>for a function is rewritten on first use. When setting a</nobr></div>
+<div style="position:absolute;top:5588;left:97"><nobr>breakpoint on an unresolved function reached via a PLT,</nobr></div>
+<div style="position:absolute;top:5608;left:97"><nobr>GDB places a breakpoint in the PLT itself. Such a break-</nobr></div>
+<div style="position:absolute;top:5628;left:97"><nobr>point is lost if the location is rewritten by the dynamic</nobr></div>
+<div style="position:absolute;top:5649;left:97"><nobr>loader. A make_show_memory_breakpoints_</nobr></div>
+<div style="position:absolute;top:5670;left:97"><nobr>cleanup function was added, which makes memory</nobr></div>
+<div style="position:absolute;top:5689;left:97"><nobr>reads show real underlying memory until the cleanup is</nobr></div>
+<div style="position:absolute;top:5710;left:97"><nobr>run. This allows GDB to check for overwritten break-</nobr></div>
+<div style="position:absolute;top:5730;left:97"><nobr>points in places it expects they may occur. Of course,</nobr></div>
+<div style="position:absolute;top:5750;left:97"><nobr>if the breakpoint is rewritten this way, GDB will fail to</nobr></div>
+<div style="position:absolute;top:5771;left:97"><nobr>stop at that location. This is a preexisting problem with</nobr></div>
+<div style="position:absolute;top:5791;left:97"><nobr>self-modifying code, not specific to non-stop mode.</nobr></div>
+<div style="position:absolute;top:5832;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="a7f9728f-0029-42ae-a051-966bc555d145" tabindex="0">As thread events are queued and can be reported to GDB<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:5852;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">some time later (see Section 8)</span>, there is a complication</nobr></div>
+<div style="position:absolute;top:5872;left:97"><nobr>with removing breakpoints. A thread may have hit a</nobr></div>
+<div style="position:absolute;top:5893;left:97"><nobr>breakpoint and queued that event, but GDB might not</nobr></div>
+<div style="position:absolute;top:5913;left:97"><nobr>have responded to it. If the breakpoint is deleted, GDB</nobr></div>
+<div style="position:absolute;top:5933;left:97"><nobr>will become confused when the breakpoint stop event</nobr></div>
+<div style="position:absolute;top:5954;left:97"><nobr>is finally processed. Without any record of the break-</nobr></div>
+<div style="position:absolute;top:5974;left:97"><nobr>point, the event is indistinguishable from a spurious</nobr></div>
+<div style="position:absolute;top:5994;left:97"><nobr>trap, a situation likely to confuse users. To resolve this,</nobr></div>
+<div style="position:absolute;top:6015;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="b2c1a3a0-267e-4729-9191-dbd894e9c301" tabindex="0">GDB must retain a record of breakpoints<span class="close"></span></span> that have been</nobr></div>
+<div style="position:absolute;top:5019;left:489"><nobr>deleted. By consulting that table GDB can determine if</nobr></div>
+<div style="position:absolute;top:5039;left:489"><nobr>a thread event can be ignored (or reported as a moribund</nobr></div>
+<div style="position:absolute;top:5059;left:489"><nobr>breakpoint). GDB has to keep such a record until it can</nobr></div>
+<div style="position:absolute;top:5080;left:489"><nobr>be certain that no thread can have queued a trap for that</nobr></div>
+<div style="position:absolute;top:5100;left:489"><nobr>breakpoint. GDB does not need to remember such lo-</nobr></div>
+<div style="position:absolute;top:5120;left:489"><nobr>cations indefinitely. Because threads can only have one</nobr></div>
+<div style="position:absolute;top:5141;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="f2155ad6-4579-4cf1-8460-e0b01272a0e6" tabindex="0">outstanding event queued<span class="close"></span></span> (see Section 8), once a thread</nobr></div>
+<div style="position:absolute;top:5161;left:489"><nobr>has reported an event, it cannot subsequently report an</nobr></div>
+<div style="position:absolute;top:5181;left:489"><nobr>event related to the removed breakpoint. Thus, to de-</nobr></div>
+<div style="position:absolute;top:5202;left:489"><nobr>termine when to delete a record of the breakpoint it is</nobr></div>
+<div style="position:absolute;top:5222;left:489"><nobr>sufficient to note that all threads that were active at the</nobr></div>
+<div style="position:absolute;top:5242;left:489"><nobr>time the breakpoint was removed have reported events.</nobr></div>
+<div style="position:absolute;top:5277;left:489"><nobr>Unfortunately, it is quite possible in practice that one</nobr></div>
+<div style="position:absolute;top:5297;left:489"><nobr>or more threads never stop, because they are not in-</nobr></div>
+<div style="position:absolute;top:5317;left:489"><nobr>volved in the problem being debugged. Such threads</nobr></div>
+<div style="position:absolute;top:5338;left:489"><nobr>would cause the moribund breakpoint list to grow in-</nobr></div>
+<div style="position:absolute;top:5358;left:489"><nobr>definitely. Instead a retirement heuristic is implemented</nobr></div>
+<div style="position:absolute;top:5378;left:489"><nobr>for retiring breakpoints once a certain number of events</nobr></div>
+<div style="position:absolute;top:5399;left:489"><nobr>have been reported, regardless of which threads reported</nobr></div>
+<div style="position:absolute;top:5419;left:489"><nobr>them. The event limit is set from the number of active</nobr></div>
+<div style="position:absolute;top:5439;left:489"><nobr>events at the time the breakpoint is deleted.</nobr></div>
+<div style="position:absolute;top:5484;left:489"><nobr>5.2 Stepping Over Breakpoints</nobr></div>
+<div style="position:absolute;top:5530;left:489"><nobr>A <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="ce0e25a1-8453-4456-9461-764f8f91524e" tabindex="0">much harder problem<span class="close"></span></span> is single stepping past a break-</nobr></div>
+<div style="position:absolute;top:5550;left:489"><nobr>point. In all-stop mode, when a breakpoint is hit, GDB</nobr></div>
+<div style="position:absolute;top:5571;left:489"><nobr>performs the following sequence of operations to con-</nobr></div>
+<div style="position:absolute;top:5591;left:489"><nobr>tinue execution:</nobr></div>
+<div style="position:absolute;top:5640;left:505"><nobr>• Remove the breakpoint being stepped. This is</nobr></div>
+<div style="position:absolute;top:5662;left:521"><nobr>done implicitly because<span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="c54c606b-9c6f-429c-a269-d4330c8d077d" tabindex="0"> all breakpoints are re-<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:5682;left:521"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">moved when GDB regains control</span>.</nobr></div>
+<div style="position:absolute;top:5714;left:505"><nobr>• Single step the target. This executes the instruction</nobr></div>
+<div style="position:absolute;top:5735;left:521"><nobr>at the breakpoint location and advances the PC past</nobr></div>
+<div style="position:absolute;top:5756;left:521"><nobr>it.</nobr></div>
+<div style="position:absolute;top:5788;left:505"><nobr>• Insert the breakpoint that was just stepped past.</nobr></div>
+<div style="position:absolute;top:5809;left:521"><nobr>This is done implicitly, as GDB reinserts all break-</nobr></div>
+<div style="position:absolute;top:5829;left:521"><nobr>points just before running the target.</nobr></div>
+<div style="position:absolute;top:5861;left:505"><nobr>• Run the target.</nobr></div>
+<div style="position:absolute;top:5913;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="fdfae151-4d76-433d-a997-0148a7f47213" tabindex="0">With non-stop mode there is a conflict. The breakpoint<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:5933;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">being stepped past cannot be removed,</span> otherwise an-</nobr></div>
+<div style="position:absolute;top:5954;left:489"><nobr>other thread executing the same code will fail to hit the</nobr></div>
+<div style="position:absolute;top:5974;left:489"><nobr>breakpoint. Clearly the breakpointed location cannot be</nobr></div>
+<div style="position:absolute;top:5994;left:489"><nobr>single stepped if the breakpoint has not been removed</nobr></div>
+<div style="position:absolute;top:6015;left:489"><nobr>for that would execute the wrong instruction.</nobr></div>
+<div style="position:absolute;top:6059;left:471"><nobr>4</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:6115;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="6"><b>Page 6</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:6207;left:97"><nobr>Solutions to this conflict are either to simulate the</nobr></div>
+<div style="position:absolute;top:6227;left:97"><nobr>stepped instruction’s behavior inside the debugger, or to</nobr></div>
+<div style="position:absolute;top:6247;left:97"><nobr>single step a displaced copy of the breakpointed instruc-</nobr></div>
+<div style="position:absolute;top:6268;left:97"><nobr>tion.</nobr></div>
+<div style="position:absolute;top:6306;left:97"><nobr>The simulation approach requires an instruction set sim-</nobr></div>
+<div style="position:absolute;top:6326;left:97"><nobr>ulator be available. GDB has many such simulators, so</nobr></div>
+<div style="position:absolute;top:6346;left:97"><nobr>this would be practical for a wide range of GDB targets.</nobr></div>
+<div style="position:absolute;top:6367;left:97"><nobr>However not all CPUs that GDB supports have simula-</nobr></div>
+<div style="position:absolute;top:6387;left:97"><nobr>tors, and hooking in a simulator to operate alongside an</nobr></div>
+<div style="position:absolute;top:6407;left:97"><nobr>already executing target may be tricky. The simulator</nobr></div>
+<div style="position:absolute;top:6428;left:97"><nobr>would need to fetch the target’s registers and access tar-</nobr></div>
+<div style="position:absolute;top:6448;left:97"><nobr>get memory. Most tricky would generating exceptions</nobr></div>
+<div style="position:absolute;top:6468;left:97"><nobr>such as page faults — many simulators simply do not</nobr></div>
+<div style="position:absolute;top:6489;left:97"><nobr>generate these conditions.</nobr></div>
+<div style="position:absolute;top:6527;left:97"><nobr>The displaced stepping technique requires the location</nobr></div>
+<div style="position:absolute;top:6547;left:97"><nobr>of a safe area of target memory in which to place the</nobr></div>
+<div style="position:absolute;top:6568;left:97"><nobr>copied instruction. Also GDB must be careful with in-</nobr></div>
+<div style="position:absolute;top:6588;left:97"><nobr>structions that manipulate or use the program counter,</nobr></div>
+<div style="position:absolute;top:6608;left:97"><nobr>because it does not have the expected value during step-</nobr></div>
+<div style="position:absolute;top:6629;left:97"><nobr>ping.</nobr></div>
+<div style="position:absolute;top:6667;left:97"><nobr>For the target of immediate interest (x86) we chose the</nobr></div>
+<div style="position:absolute;top:6687;left:97"><nobr>second technique, which is essentially the same as the</nobr></div>
+<div style="position:absolute;top:6707;left:97"><nobr>Linux kernel’s kprobes interface.[6]</nobr></div>
+<div style="position:absolute;top:6745;left:97"><nobr>As the implementation details are architecture-specific,</nobr></div>
+<div style="position:absolute;top:6766;left:97"><nobr>we added several new hooks to the architecture struc-</nobr></div>
+<div style="position:absolute;top:6786;left:97"><nobr>ture. These are:</nobr></div>
+<div style="position:absolute;top:6845;left:114"><nobr>• gdbarch_max_insn_length</nobr></div>
+<div style="position:absolute;top:6846;left:438"><nobr>and</nobr></div>
+<div style="position:absolute;top:6867;left:130"><nobr>gdbarch_displaced_step_location</nobr></div>
+<div style="position:absolute;top:6887;left:130"><nobr>determine where an instruction to be stepped may</nobr></div>
+<div style="position:absolute;top:6907;left:130"><nobr>be copied for stepping.</nobr></div>
+<div style="position:absolute;top:6943;left:114"><nobr>• gdbarch_displaced_step_copy_insn is</nobr></div>
+<div style="position:absolute;top:6965;left:130"><nobr>used to copy the instruction. It may need to ad-</nobr></div>
+<div style="position:absolute;top:6985;left:130"><nobr>just the instruction, register contents, or memory</nobr></div>
+<div style="position:absolute;top:7005;left:130"><nobr>as detailed below.</nobr></div>
+<div style="position:absolute;top:7042;left:114"><nobr>• gdbarch_displaced_step_fixup is used</nobr></div>
+<div style="position:absolute;top:7063;left:130"><nobr>after the instruction has been single stepped. It ad-</nobr></div>
+<div style="position:absolute;top:7084;left:130"><nobr>justs registers and memory to yield the effects the</nobr></div>
+<div style="position:absolute;top:7104;left:130"><nobr>instruction would have had if it had been stepped</nobr></div>
+<div style="position:absolute;top:7124;left:130"><nobr>in situ.</nobr></div>
+<div style="position:absolute;top:7161;left:114"><nobr>• gdbarch_displaced_step_free_</nobr></div>
+<div style="position:absolute;top:7183;left:130"><nobr>closure is a cleanup to free any resources</nobr></div>
+<div style="position:absolute;top:7203;left:130"><nobr>allocated during stepping by the other hooks.</nobr></div>
+<div style="position:absolute;top:6207;left:489"><nobr>These hooks show a bias towards a kprobes-like im-</nobr></div>
+<div style="position:absolute;top:6227;left:489"><nobr>plementation, but would be suitable for a simulation-</nobr></div>
+<div style="position:absolute;top:6247;left:489"><nobr>type implementation. However the existing patches</nobr></div>
+<div style="position:absolute;top:6268;left:489"><nobr>to GDB do not fully support that scheme yet. For</nobr></div>
+<div style="position:absolute;top:6288;left:489"><nobr>instance it presumes that gdbarch_displaced_</nobr></div>
+<div style="position:absolute;top:6309;left:489"><nobr>step_location is not NULL, which would not be</nobr></div>
+<div style="position:absolute;top:6329;left:489"><nobr>the case in simulation.</nobr></div>
+<div style="position:absolute;top:6363;left:489"><nobr>A suitable place to copy the instruction is often the pro-</nobr></div>
+<div style="position:absolute;top:6383;left:489"><nobr>gram’s entry point (usually _start). This location is</nobr></div>
+<div style="position:absolute;top:6404;left:489"><nobr>already used by GDB to place a breakpoint when it exe-</nobr></div>
+<div style="position:absolute;top:6424;left:489"><nobr>cutes a target routine as part of expression evaluation.</nobr></div>
+<div style="position:absolute;top:6444;left:489"><nobr>There is a displaced_step_at_entry_point</nobr></div>
+<div style="position:absolute;top:6465;left:489"><nobr>hook implementation to provide this common need. The</nobr></div>
+<div style="position:absolute;top:6485;left:489"><nobr>x86-Linux implementation does this.</nobr></div>
+<div style="position:absolute;top:6519;left:489"><nobr>As the x86 architecture has no PC-relative data access</nobr></div>
+<div style="position:absolute;top:6540;left:489"><nobr>instructions, the action of copying the instruction and</nobr></div>
+<div style="position:absolute;top:6560;left:489"><nobr>applying any fixup before stepping is simply a matter</nobr></div>
+<div style="position:absolute;top:6580;left:489"><nobr>of copying the instruction. A simple_displaced_</nobr></div>
+<div style="position:absolute;top:6601;left:489"><nobr>step_copy_insn hook implementation is provided</nobr></div>
+<div style="position:absolute;top:6621;left:489"><nobr>to do this, and the x86-Linux implementation uses it.</nobr></div>
+<div style="position:absolute;top:6641;left:489"><nobr>For an instruction that uses PC-relative data access this</nobr></div>
+<div style="position:absolute;top:6661;left:489"><nobr>hook could use one of the following techniques:</nobr></div>
+<div style="position:absolute;top:6711;left:505"><nobr>• Rewrite the instruction to adjust PC-relative dis-</nobr></div>
+<div style="position:absolute;top:6732;left:521"><nobr>placement by the distance between the displaced</nobr></div>
+<div style="position:absolute;top:6752;left:521"><nobr>location and the original location.</nobr></div>
+<div style="position:absolute;top:6784;left:505"><nobr>• Calculate the effective address and rewrite the in-</nobr></div>
+<div style="position:absolute;top:6806;left:521"><nobr>struction to use an absolute address.</nobr></div>
+<div style="position:absolute;top:6838;left:505"><nobr>• Calculate the effective address and save it in a reg-</nobr></div>
+<div style="position:absolute;top:6859;left:521"><nobr>ister (which itself would have to be preserved).</nobr></div>
+<div style="position:absolute;top:6880;left:521"><nobr>Then rewrite the instruction to use an indirect ad-</nobr></div>
+<div style="position:absolute;top:6900;left:521"><nobr>dressing mode.</nobr></div>
+<div style="position:absolute;top:6932;left:505"><nobr>• Decode the instruction and emulate it within GDB.</nobr></div>
+<div style="position:absolute;top:6983;left:489"><nobr>For x86 the complexity of displaced stepping is in the</nobr></div>
+<div style="position:absolute;top:7004;left:489"><nobr>fixup hook:</nobr></div>
+<div style="position:absolute;top:7053;left:505"><nobr>• First the instruction pointer, %eip, must be cor-</nobr></div>
+<div style="position:absolute;top:7074;left:521"><nobr>rected. For non-absolute jump, call and return in-</nobr></div>
+<div style="position:absolute;top:7095;left:521"><nobr>structions, the instruction pointer is relative to the</nobr></div>
+<div style="position:absolute;top:7115;left:521"><nobr>displaced instruction, so %eip must be adjusted by</nobr></div>
+<div style="position:absolute;top:7135;left:521"><nobr>the distance between the displaced location and the</nobr></div>
+<div style="position:absolute;top:7156;left:521"><nobr>original location.</nobr></div>
+<div style="position:absolute;top:7182;left:521"><nobr>There is one special case with system calls. Nor-</nobr></div>
+<div style="position:absolute;top:7203;left:521"><nobr>mally system calls behave as any other non-branch</nobr></div>
+<div style="position:absolute;top:7247;left:471"><nobr>5</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:7303;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="7"><b>Page 7</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:7395;left:130"><nobr>instruction and leave %eip at the next instruction.</nobr></div>
+<div style="position:absolute;top:7415;left:130"><nobr>However a signal trampoline system call leaves</nobr></div>
+<div style="position:absolute;top:7436;left:130"><nobr>%eip somewhere else. Rather than embed knowl-</nobr></div>
+<div style="position:absolute;top:7456;left:130"><nobr>edge of the system call number into GDB, this</nobr></div>
+<div style="position:absolute;top:7476;left:130"><nobr>condition is detected dynamically. After displaced</nobr></div>
+<div style="position:absolute;top:7496;left:130"><nobr>stepping a system call instruction, GDB examines</nobr></div>
+<div style="position:absolute;top:7518;left:130"><nobr>%eip and sees if it is at the next instruction. If it is,</nobr></div>
+<div style="position:absolute;top:7537;left:130"><nobr>GDB adjusts it as above. If it is not, it is presumed</nobr></div>
+<div style="position:absolute;top:7557;left:130"><nobr>such a signal trampoline occurred and %eip is not</nobr></div>
+<div style="position:absolute;top:7578;left:130"><nobr>adjusted.</nobr></div>
+<div style="position:absolute;top:7609;left:114"><nobr>• If the stepped instruction is a call, the return ad-</nobr></div>
+<div style="position:absolute;top:7631;left:130"><nobr>dress that has been pushed onto the stack is incor-</nobr></div>
+<div style="position:absolute;top:7651;left:130"><nobr>rect. It too needs adjusting by the distance between</nobr></div>
+<div style="position:absolute;top:7671;left:130"><nobr>the displaced location and the original location.</nobr></div>
+<div style="position:absolute;top:7703;left:114"><nobr>• If the displaced stepped instruction raises an excep-</nobr></div>
+<div style="position:absolute;top:7724;left:130"><nobr>tion, the %eip reported is correct after the above</nobr></div>
+<div style="position:absolute;top:7745;left:130"><nobr>adjustments. If the exceptional %eip is written</nobr></div>
+<div style="position:absolute;top:7765;left:130"><nobr>into the signal address, GDB needs to correct that</nobr></div>
+<div style="position:absolute;top:7785;left:130"><nobr>too. Illegal instructions which raise SIGILL have</nobr></div>
+<div style="position:absolute;top:7806;left:130"><nobr>this issue.</nobr></div>
+<div style="position:absolute;top:7854;left:97"><nobr>For an architecture that rewrites displaced instructions,</nobr></div>
+<div style="position:absolute;top:7875;left:97"><nobr>the fixup hook may need to perform additional PC ad-</nobr></div>
+<div style="position:absolute;top:7895;left:97"><nobr>justment, particularly on targets with a variable-length</nobr></div>
+<div style="position:absolute;top:7915;left:97"><nobr>instruction encoding.</nobr></div>
+<div style="position:absolute;top:7949;left:97"><nobr>The current implementation is limited to x86-32 instruc-</nobr></div>
+<div style="position:absolute;top:7969;left:97"><nobr>tions that may be generated by GCC. Some sequences</nobr></div>
+<div style="position:absolute;top:7990;left:97"><nobr>of x86 instructions are not correctly recognized, such as</nobr></div>
+<div style="position:absolute;top:8011;left:97"><nobr>addr16 call *(%di), which forces 16-bit address</nobr></div>
+<div style="position:absolute;top:8030;left:97"><nobr>calculation, or repz call *%eax, which is an un-</nobr></div>
+<div style="position:absolute;top:8051;left:97"><nobr>defined code sequence. Neither of these cases are rec-</nobr></div>
+<div style="position:absolute;top:8071;left:97"><nobr>ognized by GDB’s displaced stepping and so no adjust-</nobr></div>
+<div style="position:absolute;top:8091;left:97"><nobr>ment to the pushed return address occurs and the final</nobr></div>
+<div style="position:absolute;top:8112;left:97"><nobr>%eip value is incorrectly adjusted. Also x86-64 targets</nobr></div>
+<div style="position:absolute;top:8132;left:97"><nobr>are not supported.</nobr></div>
+<div style="position:absolute;top:8176;left:97"><nobr>5.3 Hardware Breakpoints and Watchpoints</nobr></div>
+<div style="position:absolute;top:8220;left:97"><nobr>Depending on the target architecture, hardware break-</nobr></div>
+<div style="position:absolute;top:8240;left:97"><nobr>points may be reported in different ways, presenting a</nobr></div>
+<div style="position:absolute;top:8261;left:97"><nobr>number of different scenarios with different solutions:</nobr></div>
+<div style="position:absolute;top:8308;left:114"><nobr>• The hardware breakpoint is reported after the in-</nobr></div>
+<div style="position:absolute;top:8330;left:130"><nobr>struction has executed. There is no need to single</nobr></div>
+<div style="position:absolute;top:8350;left:130"><nobr>step the breakpointed instruction for it has already</nobr></div>
+<div style="position:absolute;top:8370;left:130"><nobr>been performed. We are not aware of any hardware</nobr></div>
+<div style="position:absolute;top:8391;left:130"><nobr>that behaves in this manner, and it is not supported.</nobr></div>
+<div style="position:absolute;top:7394;left:505"><nobr>• The hardware breakpoint is reported before the in-</nobr></div>
+<div style="position:absolute;top:7415;left:521"><nobr>struction executes, but it is permitted to single step</nobr></div>
+<div style="position:absolute;top:7435;left:521"><nobr>an instruction at a hardware breakpoint. There is</nobr></div>
+<div style="position:absolute;top:7456;left:521"><nobr>no need to perform displaced single stepping in this</nobr></div>
+<div style="position:absolute;top:7476;left:521"><nobr>case, as the instruction can be stepped in situ. We</nobr></div>
+<div style="position:absolute;top:7496;left:521"><nobr>are not aware of hardware that behaves in this man-</nobr></div>
+<div style="position:absolute;top:7517;left:521"><nobr>ner, and GDB does not support it.</nobr></div>
+<div style="position:absolute;top:7549;left:505"><nobr>• The hardware breakpoint is reported before the in-</nobr></div>
+<div style="position:absolute;top:7570;left:521"><nobr>struction executes and it is possible to remove the</nobr></div>
+<div style="position:absolute;top:7591;left:521"><nobr>hardware watchpoint from exactly one thread. In</nobr></div>
+<div style="position:absolute;top:7611;left:521"><nobr>this case GDB can simply remove the watchpoint</nobr></div>
+<div style="position:absolute;top:7631;left:521"><nobr>while stepping the thread past it. This does not oc-</nobr></div>
+<div style="position:absolute;top:7652;left:521"><nobr>cur with x86 and is not implemented.</nobr></div>
+<div style="position:absolute;top:7684;left:505"><nobr>• The hardware breakpoint is reported before the in-</nobr></div>
+<div style="position:absolute;top:7706;left:521"><nobr>struction executes and it is not possible to single</nobr></div>
+<div style="position:absolute;top:7726;left:521"><nobr>step an instruction at a hardware breakpoint. This</nobr></div>
+<div style="position:absolute;top:7746;left:521"><nobr>situation is exactly the same as the patched break-</nobr></div>
+<div style="position:absolute;top:7767;left:521"><nobr>point case, and is solved by performing a displaced</nobr></div>
+<div style="position:absolute;top:7787;left:521"><nobr>single step. This occurs with x86 systems and is</nobr></div>
+<div style="position:absolute;top:7807;left:521"><nobr>implemented.</nobr></div>
+<div style="position:absolute;top:7859;left:489"><nobr>Running or single stepping the target after hitting a hard-</nobr></div>
+<div style="position:absolute;top:7879;left:489"><nobr>ware watchpoint is performed in different ways, depend-</nobr></div>
+<div style="position:absolute;top:7900;left:489"><nobr>ing on the target hardware:</nobr></div>
+<div style="position:absolute;top:7950;left:505"><nobr>• Hardware watchpoints are reported after the in-</nobr></div>
+<div style="position:absolute;top:7972;left:521"><nobr>struction executes. There is no issue with running</nobr></div>
+<div style="position:absolute;top:7992;left:521"><nobr>or single stepping from that point. Watchpoints on</nobr></div>
+<div style="position:absolute;top:8012;left:521"><nobr>x86 hardware behave in this manner.</nobr></div>
+<div style="position:absolute;top:8045;left:505"><nobr>• Hardware watchpoints are reported before the in-</nobr></div>
+<div style="position:absolute;top:8066;left:521"><nobr>struction executes, but a single step of that instruc-</nobr></div>
+<div style="position:absolute;top:8086;left:521"><nobr>tion does not report the watchpoint. It is possible to</nobr></div>
+<div style="position:absolute;top:8107;left:521"><nobr>single step the watched instruction in situ. Watch-</nobr></div>
+<div style="position:absolute;top:8127;left:521"><nobr>points on IA64 behave in this manner. Although</nobr></div>
+<div style="position:absolute;top:8147;left:521"><nobr>not explicitly tested, we believe this works.</nobr></div>
+<div style="position:absolute;top:8180;left:505"><nobr>• Hardware watchpoints are reported before the in-</nobr></div>
+<div style="position:absolute;top:8201;left:521"><nobr>struction executes and single stepping the instruc-</nobr></div>
+<div style="position:absolute;top:8221;left:521"><nobr>tion retriggers the watchpoint (without performing</nobr></div>
+<div style="position:absolute;top:8242;left:521"><nobr>the single step). Such a target cannot be contin-</nobr></div>
+<div style="position:absolute;top:8262;left:521"><nobr>ued without removing the watchpoint. PowerPC</nobr></div>
+<div style="position:absolute;top:8282;left:521"><nobr>watchpoints behave in this manner.</nobr></div>
+<div style="position:absolute;top:8309;left:521"><nobr>If hardware watchpoints are thread-specific, they</nobr></div>
+<div style="position:absolute;top:8330;left:521"><nobr>can temporarily be removed for the thread that</nobr></div>
+<div style="position:absolute;top:8350;left:521"><nobr>needs to be single stepped while performing the</nobr></div>
+<div style="position:absolute;top:8370;left:521"><nobr>step operation. Other threads can continue running</nobr></div>
+<div style="position:absolute;top:8391;left:521"><nobr>without danger of missing a watchpoint.</nobr></div>
+<div style="position:absolute;top:8435;left:471"><nobr>6</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:8491;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="8"><b>Page 8</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:8879;left:212"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:8657;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8603;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8711;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8765;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8819;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8873;left:279"><nobr>c</nobr></div>
+<div style="position:absolute;top:8643;left:265"><nobr>E</nobr></div>
+<div style="position:absolute;top:8614;left:238"><nobr>Wait for user</nobr></div>
+<div style="position:absolute;top:8666;left:220"><nobr>Insert breakpoints</nobr></div>
+<div style="position:absolute;top:8720;left:242"><nobr>Step or run</nobr></div>
+<div style="position:absolute;top:8774;left:233"><nobr>Wait for target</nobr></div>
+<div style="position:absolute;top:8828;left:211"><nobr>Remove breakpoints</nobr></div>
+<div style="position:absolute;top:8896;left:239"><nobr>Completed?</nobr></div>
+<div style="position:absolute;top:8885;left:195"><nobr>no</nobr></div>
+<div style="position:absolute;top:8885;left:347"><nobr>yes</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:8955;left:166"><nobr>Figure 1: Synchronous Main Loop</nobr></div>
+<div style="position:absolute;top:9022;left:130"><nobr>If, however, watchpoints are global to the process,</nobr></div>
+<div style="position:absolute;top:9042;left:130"><nobr>then either non-stop mode must be abandoned, one</nobr></div>
+<div style="position:absolute;top:9062;left:130"><nobr>must accept that other threads may fail to report the</nobr></div>
+<div style="position:absolute;top:9082;left:130"><nobr>same watchpoint during the single step operation.</nobr></div>
+<div style="position:absolute;top:9103;left:130"><nobr>Furthermore, if several hardware watchpoints are</nobr></div>
+<div style="position:absolute;top:9123;left:130"><nobr>inserted, it might be difficult or impossible to de-</nobr></div>
+<div style="position:absolute;top:9143;left:130"><nobr>termine which one actually triggered. So all watch-</nobr></div>
+<div style="position:absolute;top:9164;left:130"><nobr>points might need to be removed during the single</nobr></div>
+<div style="position:absolute;top:9184;left:130"><nobr>step operation.</nobr></div>
+<div style="position:absolute;top:9211;left:130"><nobr>GDB’s current implementation removes all break-</nobr></div>
+<div style="position:absolute;top:9231;left:130"><nobr>points and watchpoints in this case, and work is</nobr></div>
+<div style="position:absolute;top:9252;left:130"><nobr>needed to improve this.</nobr></div>
+<div style="position:absolute;top:9302;left:97"><nobr>Finally, a hardware watchpoint may trigger while exe-</nobr></div>
+<div style="position:absolute;top:9323;left:97"><nobr>cuting a displaced single step for an inserted breakpoint.</nobr></div>
+<div style="position:absolute;top:9343;left:97"><nobr>This presents the same issues as for running or single</nobr></div>
+<div style="position:absolute;top:9363;left:97"><nobr>stepping after hitting a hardware watchpoint with the</nobr></div>
+<div style="position:absolute;top:9384;left:97"><nobr>additional complexity of adjusting the program counter</nobr></div>
+<div style="position:absolute;top:9404;left:97"><nobr>reported to the user. The adjustment is the same as for</nobr></div>
+<div style="position:absolute;top:9424;left:97"><nobr>when an exception occurs during such a displaced single</nobr></div>
+<div style="position:absolute;top:9445;left:97"><nobr>step.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:9494;left:97"><nobr>6 Event Loop</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:9538;left:97"><nobr>GDB’s all-stop model event loop is conceptually very</nobr></div>
+<div style="position:absolute;top:9558;left:97"><nobr>simple. As has been mentioned, in this model either</nobr></div>
+<div style="position:absolute;top:9579;left:97"><nobr>GDB is active, or the target is active. GDB’s main loop</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:8690;left:521"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:8811;left:683"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:8771;left:521"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:8684;left:589"><nobr>c</nobr></div>
+<div style="position:absolute;top:8738;left:751"><nobr>c</nobr></div>
+<div style="position:absolute;top:8765;left:589"><nobr>c</nobr></div>
+<div style="position:absolute;top:8630;left:670"><nobr>c</nobr></div>
+<div style="position:absolute;top:8589;left:587"><nobr>E</nobr></div>
+<div style="position:absolute;top:8900;left:589"><nobr>c</nobr></div>
+<div style="position:absolute;top:8832;left:589"><nobr>'</nobr></div>
+<div style="position:absolute;top:8846;left:589"><nobr>c</nobr></div>
+<div style="position:absolute;top:8805;left:751"><nobr>c</nobr></div>
+<div style="position:absolute;top:8900;left:751"><nobr>c</nobr></div>
+<div style="position:absolute;top:8616;left:670"><nobr>'</nobr></div>
+<div style="position:absolute;top:8954;left:736"><nobr>E</nobr></div>
+<div style="position:absolute;top:8807;left:832"><nobr>T</nobr></div>
+<div style="position:absolute;top:8707;left:546"><nobr>Run control?</nobr></div>
+<div style="position:absolute;top:8639;left:639"><nobr>select (2)</nobr></div>
+<div style="position:absolute;top:8587;left:625"><nobr>Do command</nobr></div>
+<div style="position:absolute;top:8855;left:551"><nobr>Start action</nobr></div>
+<div style="position:absolute;top:8909;left:544"><nobr>Enable async</nobr></div>
+<div style="position:absolute;top:8828;left:710"><nobr>Completed?</nobr></div>
+<div style="position:absolute;top:8909;left:704"><nobr>Disable async</nobr></div>
+<div style="position:absolute;top:8747;left:704"><nobr>Process event</nobr></div>
+<div style="position:absolute;top:8788;left:542"><nobr>Target active?</nobr></div>
+<div style="position:absolute;top:8737;left:559"><nobr>yes</nobr></div>
+<div style="position:absolute;top:8723;left:521"><nobr>no</nobr></div>
+<div style="position:absolute;top:8662;left:595"><nobr>stdin</nobr></div>
+<div style="position:absolute;top:8662;left:706"><nobr>target</nobr></div>
+<div style="position:absolute;top:8845;left:683"><nobr>no</nobr></div>
+<div style="position:absolute;top:8858;left:721"><nobr>yes</nobr></div>
+<div style="position:absolute;top:8770;left:633"><nobr>yes</nobr></div>
+<div style="position:absolute;top:8824;left:565"><nobr>no</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:8984;left:553"><nobr>Figure 2: Asynchronous Main Loop</nobr></div>
+<div style="position:absolute;top:9054;left:489"><nobr>is shown in Figure 1. The point at which the target can</nobr></div>
+<div style="position:absolute;top:9075;left:489"><nobr>report an event is well defined — it is only after GDB</nobr></div>
+<div style="position:absolute;top:9095;left:489"><nobr>has started a target thread. Clearly, with non-stop de-</nobr></div>
+<div style="position:absolute;top:9115;left:489"><nobr>bugging, this picture is no longer true. When threads</nobr></div>
+<div style="position:absolute;top:9136;left:489"><nobr>are always active, a thread may want to report an event</nobr></div>
+<div style="position:absolute;top:9156;left:489"><nobr>at any time. Allowing that to happen would be severely</nobr></div>
+<div style="position:absolute;top:9176;left:489"><nobr>disruptive to GDB’s internal design. Furthermore, as</nobr></div>
+<div style="position:absolute;top:9197;left:489"><nobr>discussed in Section 8, this would cause difficulty with</nobr></div>
+<div style="position:absolute;top:9217;left:489"><nobr>GDB’s serial protocol.</nobr></div>
+<div style="position:absolute;top:9256;left:489"><nobr>To implement a non-stop event loop, we took a patch</nobr></div>
+<div style="position:absolute;top:9276;left:489"><nobr>that had been developed by Nick Roberts[7]. This patch</nobr></div>
+<div style="position:absolute;top:9296;left:489"><nobr>implements an asynchronous target mode, called tar-</nobr></div>
+<div style="position:absolute;top:9317;left:489"><nobr>get async. This is different from the original proposal</nobr></div>
+<div style="position:absolute;top:9337;left:489"><nobr>posted to the GDB mailing list.[8].</nobr></div>
+<div style="position:absolute;top:9375;left:489"><nobr>Async mode changes the event loop to that shown in</nobr></div>
+<div style="position:absolute;top:9396;left:489"><nobr>Figure 2 so that it waits in exactly one place. This be-</nobr></div>
+<div style="position:absolute;top:9416;left:489"><nobr>havior is achieved by adding a target_async hook</nobr></div>
+<div style="position:absolute;top:9436;left:489"><nobr>to the target stack. This hook should register a file de-</nobr></div>
+<div style="position:absolute;top:9457;left:489"><nobr>scriptor and callback function with GDB’s select(2)</nobr></div>
+<div style="position:absolute;top:9477;left:489"><nobr>logic. If successful, GDB then waits on the input file</nobr></div>
+<div style="position:absolute;top:9497;left:489"><nobr>descriptors for an action. If unsuccessful (because the</nobr></div>
+<div style="position:absolute;top:9518;left:489"><nobr>target does not support asynchronous behavior), GDB</nobr></div>
+<div style="position:absolute;top:9538;left:489"><nobr>reverts to the original behavior of waiting for the target</nobr></div>
+<div style="position:absolute;top:9558;left:489"><nobr>explicitly. If the target file descriptor is active, the target</nobr></div>
+<div style="position:absolute;top:9579;left:489"><nobr>event is processed, which may lead to a continuation of</nobr></div>
+<div style="position:absolute;top:9623;left:471"><nobr>7</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:9679;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="9"><b>Page 9</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:9905;left:112"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:9986;left:112"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:10026;left:274"><nobr>—————33333—————33333</nobr></div>
+<div style="position:absolute;top:9899;left:179"><nobr>c</nobr></div>
+<div style="position:absolute;top:9980;left:179"><nobr>c</nobr></div>
+<div style="position:absolute;top:9791;left:179"><nobr>c</nobr></div>
+<div style="position:absolute;top:9791;left:341"><nobr>c</nobr></div>
+<div style="position:absolute;top:9845;left:179"><nobr>c</nobr></div>
+<div style="position:absolute;top:9845;left:341"><nobr>c</nobr></div>
+<div style="position:absolute;top:10047;left:179"><nobr>'</nobr></div>
+<div style="position:absolute;top:10061;left:179"><nobr>c</nobr></div>
+<div style="position:absolute;top:10020;left:341"><nobr>c</nobr></div>
+<div style="position:absolute;top:9831;left:341"><nobr>'</nobr></div>
+<div style="position:absolute;top:9926;left:341"><nobr>c</nobr></div>
+<div style="position:absolute;top:10115;left:326"><nobr>E</nobr></div>
+<div style="position:absolute;top:10022;left:422"><nobr>T</nobr></div>
+<div style="position:absolute;top:9922;left:137"><nobr>Run control?</nobr></div>
+<div style="position:absolute;top:9854;left:230"><nobr>select (2)</nobr></div>
+<div style="position:absolute;top:9802;left:135"><nobr>Do command</nobr></div>
+<div style="position:absolute;top:9800;left:297"><nobr>Enable async</nobr></div>
+<div style="position:absolute;top:10003;left:124"><nobr>Thread running?</nobr></div>
+<div style="position:absolute;top:10043;left:301"><nobr>Completed?</nobr></div>
+<div style="position:absolute;top:10070;left:141"><nobr>Start action</nobr></div>
+<div style="position:absolute;top:9935;left:294"><nobr>Process event</nobr></div>
+<div style="position:absolute;top:9952;left:150"><nobr>yes</nobr></div>
+<div style="position:absolute;top:9877;left:186"><nobr>stdin</nobr></div>
+<div style="position:absolute;top:9938;left:112"><nobr>no</nobr></div>
+<div style="position:absolute;top:10033;left:186"><nobr>no</nobr></div>
+<div style="position:absolute;top:10019;left:224"><nobr>yes</nobr></div>
+<div style="position:absolute;top:10060;left:274"><nobr>no</nobr></div>
+<div style="position:absolute;top:10073;left:305"><nobr>yes</nobr></div>
+<div style="position:absolute;top:9877;left:296"><nobr>target</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:10145;left:178"><nobr>Figure 3: Non-stop Main Loop</nobr></div>
+<div style="position:absolute;top:10202;left:97"><nobr>run control, or may terminate the pending operation and</nobr></div>
+<div style="position:absolute;top:10222;left:97"><nobr>remove the target file descriptor from the select table.</nobr></div>
+<div style="position:absolute;top:10267;left:97"><nobr>This modified loop allows exactly one run control op-</nobr></div>
+<div style="position:absolute;top:10287;left:97"><nobr>eration to be outstanding and permits manipulation of</nobr></div>
+<div style="position:absolute;top:10307;left:97"><nobr>some of GDB’s state while waiting for the operation to</nobr></div>
+<div style="position:absolute;top:10328;left:97"><nobr>complete. It is not possible to examine target state while</nobr></div>
+<div style="position:absolute;top:10348;left:97"><nobr>a thread is running. The target file descriptor is transi-</nobr></div>
+<div style="position:absolute;top:10368;left:97"><nobr>tory and removed once the operation has completed.</nobr></div>
+<div style="position:absolute;top:10413;left:97"><nobr>The target file descriptor may be the file descriptor for</nobr></div>
+<div style="position:absolute;top:10433;left:97"><nobr>the serial protocol, if remote debugging is in use. For</nobr></div>
+<div style="position:absolute;top:10454;left:97"><nobr>native debugging a pipe has to be created, as described</nobr></div>
+<div style="position:absolute;top:10474;left:97"><nobr>in Section 7.</nobr></div>
+<div style="position:absolute;top:10519;left:97"><nobr>For non-stop debugging the asynchronous main loop</nobr></div>
+<div style="position:absolute;top:10539;left:97"><nobr>was modified to that shown in Figure 3. With this</nobr></div>
+<div style="position:absolute;top:10559;left:97"><nobr>new loop, the pending operations are recorded in per-</nobr></div>
+<div style="position:absolute;top:10580;left:97"><nobr>thread state. In particular, GDB’s continuation process-</nobr></div>
+<div style="position:absolute;top:10600;left:97"><nobr>ing, which determines whether a compound operation</nobr></div>
+<div style="position:absolute;top:10620;left:97"><nobr>such as next is completed, needed to be made per-</nobr></div>
+<div style="position:absolute;top:10641;left:97"><nobr>thread.</nobr></div>
+<div style="position:absolute;top:10685;left:97"><nobr>As with the all-stop behavior with scheduler locking</nobr></div>
+<div style="position:absolute;top:10707;left:97"><nobr>off, if a multi-action sequence is interrupted by an or-</nobr></div>
+<div style="position:absolute;top:10726;left:97"><nobr>thogonal event in a separate thread, the multi-action se-</nobr></div>
+<div style="position:absolute;top:10746;left:97"><nobr>quence is remembered as part of that thread’s state and</nobr></div>
+<div style="position:absolute;top:10767;left:97"><nobr>the orthogonal event is reported.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:9769;left:489"><nobr>7 Native Debugging</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:9815;left:489"><nobr>For native Linux debugging, GDB uses the ptrace in-</nobr></div>
+<div style="position:absolute;top:9835;left:489"><nobr>terface. Whenever a signal is to be delivered to the pro-</nobr></div>
+<div style="position:absolute;top:9856;left:489"><nobr>gram being debugged, the program is stopped and GDB</nobr></div>
+<div style="position:absolute;top:9876;left:489"><nobr>is informed when it waits. GDB can process the sig-</nobr></div>
+<div style="position:absolute;top:9896;left:489"><nobr>nal and determine whether or not to continue delivery</nobr></div>
+<div style="position:absolute;top:9917;left:489"><nobr>to the child. Normally breakpoints, single step com-</nobr></div>
+<div style="position:absolute;top:9937;left:489"><nobr>pletion and hardware watchpoints cause a SIGTRAP,</nobr></div>
+<div style="position:absolute;top:9957;left:489"><nobr>which GDB processes and does not pass on to the de-</nobr></div>
+<div style="position:absolute;top:9978;left:489"><nobr>bugged program.</nobr></div>
+<div style="position:absolute;top:10013;left:489"><nobr>This behavior is implemented in the native Linux target</nobr></div>
+<div style="position:absolute;top:10033;left:489"><nobr>stack. Whenever GDB runs or single steps the program,</nobr></div>
+<div style="position:absolute;top:10054;left:489"><nobr>a PTRACE_CONT or PTRACE_SINGLESTEP is per-</nobr></div>
+<div style="position:absolute;top:10074;left:489"><nobr>formed, followed by a wait.</nobr></div>
+<div style="position:absolute;top:10109;left:489"><nobr>For non-stop debugging a number of changes must be</nobr></div>
+<div style="position:absolute;top:10130;left:489"><nobr>made:</nobr></div>
+<div style="position:absolute;top:10182;left:505"><nobr>• GDB cannot wait for the target to stop.</nobr></div>
+<div style="position:absolute;top:10216;left:505"><nobr>• GDB’s event loop must be informed, via a file de-</nobr></div>
+<div style="position:absolute;top:10237;left:521"><nobr>scriptor, that an event of interest has occurred.</nobr></div>
+<div style="position:absolute;top:10270;left:505"><nobr>• Other threads in the debugged program must be</nobr></div>
+<div style="position:absolute;top:10291;left:521"><nobr>continued as soon as possible.</nobr></div>
+<div style="position:absolute;top:10345;left:489"><nobr>Whenever the debugged program is to be sent a sig-</nobr></div>
+<div style="position:absolute;top:10365;left:489"><nobr>nal, GDB receives a SIGCHILD signal. GDB installs</nobr></div>
+<div style="position:absolute;top:10385;left:489"><nobr>a handler for that signal to support Linux native async</nobr></div>
+<div style="position:absolute;top:10406;left:489"><nobr>mode. When the handler runs, there are one or more</nobr></div>
+<div style="position:absolute;top:10426;left:489"><nobr>child events of interest. It writes to a pipe that has been</nobr></div>
+<div style="position:absolute;top:10446;left:489"><nobr>registered with the main event loop. The main event</nobr></div>
+<div style="position:absolute;top:10467;left:489"><nobr>loop will see this activity and invoke the callback asso-</nobr></div>
+<div style="position:absolute;top:10487;left:489"><nobr>ciated with that file descriptor.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:10538;left:489"><nobr>8 <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="d9c47374-aefe-4e51-b5c4-73aa094b4948" tabindex="0">Serial Protocol<span class="close"></span></span></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:10584;left:489"><nobr>GDB’s serial protocol provides a mechanism to attach</nobr></div>
+<div style="position:absolute;top:10604;left:489"><nobr>GDB to a remote system. The serial protocol is syn-</nobr></div>
+<div style="position:absolute;top:10624;left:489"><nobr>chronous, and it is well defined as to whether GDB or</nobr></div>
+<div style="position:absolute;top:10645;left:489"><nobr>the target system is to send the next message. Normally</nobr></div>
+<div style="position:absolute;top:10665;left:489"><nobr>the target is waiting for GDB to send it a request, to</nobr></div>
+<div style="position:absolute;top:10685;left:489"><nobr>which it replies. When GDB sends it a run (or single</nobr></div>
+<div style="position:absolute;top:10706;left:489"><nobr>step) request, the target starts running and GDB waits</nobr></div>
+<div style="position:absolute;top:10726;left:489"><nobr>for a reply. When the target hits a breakpoint, completes</nobr></div>
+<div style="position:absolute;top:10746;left:489"><nobr>the single step or encounters some other trap event, the</nobr></div>
+<div style="position:absolute;top:10767;left:489"><nobr>target sends a stop reply back to GDB. At this point all</nobr></div>
+<div style="position:absolute;top:10811;left:471"><nobr>8</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:10867;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="10"><b>Page 10</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:11073;left:272"><nobr>E</nobr></div>
+<div style="position:absolute;top:11100;left:272"><nobr>E</nobr></div>
+<div style="position:absolute;top:11087;left:206"><nobr>'</nobr></div>
+<div style="position:absolute;top:11021;left:146"><nobr>T</nobr></div>
+<div style="position:absolute;top:11060;left:159"><nobr>c</nobr></div>
+<div style="position:absolute;top:10986;left:206"><nobr>'</nobr></div>
+<div style="position:absolute;top:10972;left:272"><nobr>E</nobr></div>
+<div style="position:absolute;top:11188;left:272"><nobr>E</nobr></div>
+<div style="position:absolute;top:11202;left:206"><nobr>'</nobr></div>
+<div style="position:absolute;top:11129;left:159"><nobr>T</nobr></div>
+<div style="position:absolute;top:11168;left:146"><nobr>c</nobr></div>
+<div style="position:absolute;top:11183;left:127"><nobr>Wait for</nobr></div>
+<div style="position:absolute;top:11201;left:133"><nobr>Reply</nobr></div>
+<div style="position:absolute;top:11191;left:319"><nobr>Save it</nobr></div>
+<div style="position:absolute;top:11075;left:298"><nobr>Process stop</nobr></div>
+<div style="position:absolute;top:11093;left:294"><nobr>Send stop ack</nobr></div>
+<div style="position:absolute;top:10975;left:319"><nobr>Save it</nobr></div>
+<div style="position:absolute;top:10967;left:127"><nobr>Wait for</nobr></div>
+<div style="position:absolute;top:10985;left:133"><nobr>Reply</nobr></div>
+<div style="position:absolute;top:11083;left:119"><nobr>May Send</nobr></div>
+<div style="position:absolute;top:11106;left:210"><nobr>Saved stop</nobr></div>
+<div style="position:absolute;top:11059;left:213"><nobr>Stop reply</nobr></div>
+<div style="position:absolute;top:10957;left:213"><nobr>Stop reply</nobr></div>
+<div style="position:absolute;top:11173;left:213"><nobr>Stop reply</nobr></div>
+<div style="position:absolute;top:11119;left:85"><nobr>Non-run</nobr></div>
+<div style="position:absolute;top:11133;left:89"><nobr>request</nobr></div>
+<div style="position:absolute;top:11045;left:89"><nobr>request</nobr></div>
+<div style="position:absolute;top:11032;left:111"><nobr>Run</nobr></div>
+<div style="position:absolute;top:11018;left:166"><nobr>OK reply</nobr></div>
+<div style="position:absolute;top:11153;left:166"><nobr>Reply</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:11250;left:151"><nobr>Figure 4: Serial Protocol: GDB Engine</nobr></div>
+<div style="position:absolute;top:11300;left:97"><nobr>target threads are stopped and the target returns to wait-</nobr></div>
+<div style="position:absolute;top:11320;left:97"><nobr>ing for a request from GDB.<font style="font-size:9px">3</font></nobr></div>
+<div style="position:absolute;top:11355;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="e83d6a9a-84cc-40b4-a2dd-513ecfff2bce" tabindex="0">With the all-stop debugging paradigm, this synchronous<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11376;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">protocol is satisfactory. </span>With <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="c53cab2f-1b1b-4f7f-8471-25706f45c711" tabindex="0">non-stop<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span> debugging there</nobr></div>
+<div style="position:absolute;top:11396;left:97"><nobr>are<span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="aa0dcbae-cedf-4b9e-8e12-e669bdc006f0" tabindex="0"> two issues to resolve<span class="close"></span></span>:</nobr></div>
+<div style="position:absolute;top:11448;left:114"><nobr>• When the target runs or single steps, GDB waits for</nobr></div>
+<div style="position:absolute;top:11470;left:130"><nobr>a stop reply packet. GDB is unable to send another</nobr></div>
+<div style="position:absolute;top:11490;left:130"><nobr>request until that stop reply is received.<font style="font-size:9px">4 </font>This pre-</nobr></div>
+<div style="position:absolute;top:11510;left:130"><nobr>vents the user from examining program state, and</nobr></div>
+<div style="position:absolute;top:11531;left:130"><nobr>prevents GDB from inserting breakpoints, starting</nobr></div>
+<div style="position:absolute;top:11551;left:130"><nobr>other threads and performing other run control op-</nobr></div>
+<div style="position:absolute;top:11571;left:130"><nobr>erations.</nobr></div>
+<div style="position:absolute;top:11604;left:114"><nobr>• In non-stop mode, threads continue to run when</nobr></div>
+<div style="position:absolute;top:11625;left:130"><nobr>one of them hits a breakpoint or other trap. Another</nobr></div>
+<div style="position:absolute;top:11646;left:130"><nobr>thread could also trap, thus generating a set of stop</nobr></div>
+<div style="position:absolute;top:11666;left:130"><nobr>replies that need to be sent to GDB. There could be</nobr></div>
+<div style="position:absolute;top:11686;left:130"><nobr>zero or more stop replies to send, and GDB needs</nobr></div>
+<div style="position:absolute;top:11707;left:130"><nobr>to be able to accept these.</nobr></div>
+<div style="position:absolute;top:11760;left:97"><nobr>The first issue is resolved by changing the serial protocol</nobr></div>
+<div style="position:absolute;top:11780;left:97"><nobr>to <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="e4083653-8bcb-45e6-9f1c-e6815b01a024" tabindex="0">respond immediately to a single step or run request<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span>.</nobr></div>
+<div style="position:absolute;top:11801;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="f91f8538-632c-4646-9f8c-37cc02a311de" tabindex="0">In non-stop mode, an s, c or vCont request produces<span class="close" style="opacity: 0; transform: scale(0.6);"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11821;left:97"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">an OK response.</span> Thus GDB is free to make further re-</nobr></div>
+<div style="position:absolute;top:11841;left:97"><nobr>quests while the target is active.</nobr></div>
+</span></font>
+<font size="2" face="Times"><span style="font-size:8px;font-family:Times">
+<div style="position:absolute;top:11871;left:115"><nobr>3<font style="font-size:11px">The serial protocol has error checking, recovery and timeout</font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:11px;font-family:Times">
+<div style="position:absolute;top:11890;left:97"><nobr>framing. We shall not discuss that here, and simply treat it as a</nobr></div>
+<div style="position:absolute;top:11907;left:97"><nobr>packet-based protocol. The error recovery adds some complexity,</nobr></div>
+<div style="position:absolute;top:11923;left:97"><nobr>but does not otherwise affect this design.</nobr></div>
+</span></font>
+<font size="2" face="Times"><span style="font-size:8px;font-family:Times">
+<div style="position:absolute;top:11937;left:115"><nobr>4<font style="font-size:11px">A special out-of-band ^C can be sent to regain control, but that</font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:11px;font-family:Times">
+<div style="position:absolute;top:11957;left:97"><nobr>is exceptional.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:11073;left:610"><nobr>d</nobr></div>
+<div style="position:absolute;top:11059;left:595"><nobr>d</nobr></div>
+<div style="position:absolute;top:11044;left:580"><nobr>d</nobr></div>
+<div style="position:absolute;top:11029;left:565"><nobr>d</nobr></div>
+<div style="position:absolute;top:11021;left:557"><nobr>ds</nobr></div>
+<div style="position:absolute;top:11007;left:571"><nobr>d</nobr></div>
+<div style="position:absolute;top:11022;left:586"><nobr>d</nobr></div>
+<div style="position:absolute;top:11037;left:601"><nobr>d</nobr></div>
+<div style="position:absolute;top:11052;left:616"><nobr>d</nobr></div>
+<div style="position:absolute;top:11060;left:623"><nobr>d‚</nobr></div>
+<div style="position:absolute;top:11021;left:731"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11036;left:716"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11051;left:701"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11066;left:687"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11073;left:679"><nobr>&nbsp;©</nobr></div>
+<div style="position:absolute;top:11060;left:665"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11045;left:680"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11030;left:695"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11015;left:710"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11007;left:718"><nobr>&nbsp; </nobr></div>
+<div style="position:absolute;top:11080;left:745"><nobr>E</nobr></div>
+<div style="position:absolute;top:11094;left:679"><nobr>'</nobr></div>
+<div style="position:absolute;top:11115;left:679"><nobr>d</nobr></div>
+<div style="position:absolute;top:11130;left:694"><nobr>d</nobr></div>
+<div style="position:absolute;top:11145;left:709"><nobr>d</nobr></div>
+<div style="position:absolute;top:11160;left:724"><nobr>d</nobr></div>
+<div style="position:absolute;top:11168;left:731"><nobr>d‚</nobr></div>
+<div style="position:absolute;top:11129;left:623"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11144;left:608"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11159;left:593"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11174;left:579"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11181;left:571"><nobr>&nbsp;©</nobr></div>
+<div style="position:absolute;top:11168;left:557"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11153;left:572"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11138;left:587"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11123;left:602"><nobr>&nbsp;</nobr></div>
+<div style="position:absolute;top:11115;left:610"><nobr>&nbsp; </nobr></div>
+<div style="position:absolute;top:11181;left:718"><nobr>d</nobr></div>
+<div style="position:absolute;top:11167;left:703"><nobr>d</nobr></div>
+<div style="position:absolute;top:11152;left:688"><nobr>d</nobr></div>
+<div style="position:absolute;top:11137;left:673"><nobr>d</nobr></div>
+<div style="position:absolute;top:11129;left:665"><nobr>ds</nobr></div>
+<div style="position:absolute;top:11083;left:764"><nobr>Enable</nobr></div>
+<div style="position:absolute;top:11183;left:757"><nobr>Start</nobr></div>
+<div style="position:absolute;top:11201;left:744"><nobr>OK reply</nobr></div>
+<div style="position:absolute;top:10967;left:740"><nobr>Stop reply</nobr></div>
+<div style="position:absolute;top:10985;left:749"><nobr>Disable</nobr></div>
+<div style="position:absolute;top:11083;left:637"><nobr>Wait</nobr></div>
+<div style="position:absolute;top:11183;left:503"><nobr>Process</nobr></div>
+<div style="position:absolute;top:11201;left:511"><nobr>Reply</nobr></div>
+<div style="position:absolute;top:10976;left:502"><nobr>Queue it</nobr></div>
+<div style="position:absolute;top:11032;left:631"><nobr>Enabled</nobr></div>
+<div style="position:absolute;top:11018;left:632"><nobr>Queued &amp;</nobr></div>
+<div style="position:absolute;top:11065;left:697"><nobr>Stop ack</nobr></div>
+<div style="position:absolute;top:11065;left:534"><nobr>Thread trap</nobr></div>
+<div style="position:absolute;top:11119;left:706"><nobr>Run request</nobr></div>
+<div style="position:absolute;top:11133;left:625"><nobr>Non-</nobr></div>
+<div style="position:absolute;top:11146;left:611"><nobr>run request</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:11250;left:539"><nobr>Figure 5: Serial Protocol: Target Engine</nobr></div>
+<div style="position:absolute;top:11302;left:489"><nobr>The serial protocol is further augmented to <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="b7eea9ff-366f-443d-ba48-889ecb467710" tabindex="0">allow a sin-<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11322;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">gle stop reply at any point.</span> This introduces a race con-</nobr></div>
+<div style="position:absolute;top:11342;left:489"><nobr>dition, because concurrent with the target sending a stop</nobr></div>
+<div style="position:absolute;top:11363;left:489"><nobr>reply, GDB could be sending an unrelated request. <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="a591e4bf-aa1b-4cc8-ad60-1b804c3e1bbf" tabindex="0">The<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11383;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">stop reply must be distinguishable from any other reply</span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11403;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">packet.</span> If GDB receives a stop reply when it is waiting</nobr></div>
+<div style="position:absolute;top:11424;left:489"><nobr>for another reply, it can save or process the stop reply</nobr></div>
+<div style="position:absolute;top:11444;left:489"><nobr>and then resume waiting for the reply for its outstanding</nobr></div>
+<div style="position:absolute;top:11464;left:489"><nobr>request.</nobr></div>
+<div style="position:absolute;top:11502;left:489"><nobr>Once the target has sent a stop reply, it does not send any</nobr></div>
+<div style="position:absolute;top:11523;left:489"><nobr>further stop replies until it has seen a stop acknowledge-</nobr></div>
+<div style="position:absolute;top:11543;left:489"><nobr>ment packet from GDB. <span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 closeable" id="c4166807-11e3-49ec-9f9f-ff569a1fed04" tabindex="0">The target must be prepared<span class="close"></span></span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11563;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">to handle other requests while waiting for the stop ac-</span></nobr></div><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">
+</span><div style="position:absolute;top:11584;left:489"><nobr><span class="d0e639f3-4255-4b9b-8ffa-b8d6966ed917 default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14">knowledgment</span>. In this way flow control of stop replies</nobr></div>
+<div style="position:absolute;top:11604;left:489"><nobr>is achieved.</nobr></div>
+<div style="position:absolute;top:11642;left:489"><nobr>The two modified protocol engines are shown in Fig-</nobr></div>
+<div style="position:absolute;top:11662;left:489"><nobr>ure 4 and Figure 5. The GDB engine spends most of</nobr></div>
+<div style="position:absolute;top:11683;left:489"><nobr>the time waiting in the may send state, ready to send</nobr></div>
+<div style="position:absolute;top:11703;left:489"><nobr>a request to the target, and available to respond to stop</nobr></div>
+<div style="position:absolute;top:11723;left:489"><nobr>replies from the target. As can be seen by the horizontal</nobr></div>
+<div style="position:absolute;top:11744;left:489"><nobr>symmetry, run requests are treated the same as non-run</nobr></div>
+<div style="position:absolute;top:11764;left:489"><nobr>requests. The target engine spends most of the time in</nobr></div>
+<div style="position:absolute;top:11784;left:489"><nobr>the wait state, ready for requests from GDB, and for</nobr></div>
+<div style="position:absolute;top:11805;left:489"><nobr>events from the program being debugged.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:11864;left:489"><nobr>9 User Interface</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:11914;left:489"><nobr>GDB has traditionally used a command-line user inter-</nobr></div>
+<div style="position:absolute;top:11934;left:489"><nobr>face. As graphical front ends were developed it was</nobr></div>
+<div style="position:absolute;top:11955;left:489"><nobr>discovered that GDB’s CLI was awkward. Commands</nobr></div>
+<div style="position:absolute;top:11999;left:471"><nobr>9</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:12055;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="11"><b>Page 11</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:12147;left:97"><nobr>were insufficiently precise and responses were ambigu-</nobr></div>
+<div style="position:absolute;top:12167;left:97"><nobr>ous. An alternative was developed called MI.[9] This re-</nobr></div>
+<div style="position:absolute;top:12187;left:97"><nobr>mains a textual interface operating over the same input</nobr></div>
+<div style="position:absolute;top:12208;left:97"><nobr>and output streams. However it is much more precise</nobr></div>
+<div style="position:absolute;top:12228;left:97"><nobr>and unambiguous.</nobr></div>
+<div style="position:absolute;top:12267;left:97"><nobr>Every MI command is of the form -command and elic-</nobr></div>
+<div style="position:absolute;top:12287;left:97"><nobr>its a response of the form ^response. Events such</nobr></div>
+<div style="position:absolute;top:12307;left:97"><nobr>as breakpoints being hit are reported as *event. Addi-</nobr></div>
+<div style="position:absolute;top:12328;left:97"><nobr>tionally, command/response pairs may be labeled allow-</nobr></div>
+<div style="position:absolute;top:12348;left:97"><nobr>ing a consumer to associate responses with commands.</nobr></div>
+<div style="position:absolute;top:12368;left:97"><nobr>GDB prompts whenever it is ready to accept another MI</nobr></div>
+<div style="position:absolute;top:12388;left:97"><nobr>command.</nobr></div>
+<div style="position:absolute;top:12427;left:97"><nobr>GDB’s user interface and internals maintain the concept</nobr></div>
+<div style="position:absolute;top:12447;left:97"><nobr>of current thread. The current thread can be changed</nobr></div>
+<div style="position:absolute;top:12468;left:97"><nobr>by user command, or automatically when an executing</nobr></div>
+<div style="position:absolute;top:12488;left:97"><nobr>thread stops at a breakpoint or other event. With all-</nobr></div>
+<div style="position:absolute;top:12508;left:97"><nobr>stop mode, this automatic mode change is not problem-</nobr></div>
+<div style="position:absolute;top:12529;left:97"><nobr>atic because it is not possible for the user to manipulate</nobr></div>
+<div style="position:absolute;top:12549;left:97"><nobr>a thread concurrent with an executing thread hitting a</nobr></div>
+<div style="position:absolute;top:12569;left:97"><nobr>breakpoint.</nobr></div>
+<div style="position:absolute;top:12608;left:97"><nobr>However, with non-stop mode, the user could be per-</nobr></div>
+<div style="position:absolute;top:12628;left:97"><nobr>forming a sequence of thread control UI operations, and</nobr></div>
+<div style="position:absolute;top:12648;left:97"><nobr>be interrupted by some other thread hitting a breakpoint.</nobr></div>
+<div style="position:absolute;top:12669;left:97"><nobr>This asynchronous event changes GDB’s current thread</nobr></div>
+<div style="position:absolute;top:12689;left:97"><nobr>state and subsequent commands control the new thread</nobr></div>
+<div style="position:absolute;top:12709;left:97"><nobr>rather than the old one. For a human using the CLI this</nobr></div>
+<div style="position:absolute;top:12730;left:97"><nobr>would merely be an annoyance as the interruption would</nobr></div>
+<div style="position:absolute;top:12750;left:97"><nobr>be noticed. For an IDE using MI, it would be a disas-</nobr></div>
+<div style="position:absolute;top:12770;left:97"><nobr>ter as user actions in the GUI result in changing state</nobr></div>
+<div style="position:absolute;top:12791;left:97"><nobr>unexpectedly.</nobr></div>
+<div style="position:absolute;top:12829;left:97"><nobr>We audited the MI interface for issues that non-stop de-</nobr></div>
+<div style="position:absolute;top:12849;left:97"><nobr>bugging would introduce. The review was circulated on</nobr></div>
+<div style="position:absolute;top:12870;left:97"><nobr>the GDB mailing list.[10] The main issues found were:</nobr></div>
+<div style="position:absolute;top:12929;left:114"><nobr>• MI was inconsistent about when a prompt is</nobr></div>
+<div style="position:absolute;top:12951;left:130"><nobr>printed. The prompt tells the consumer that GDB is</nobr></div>
+<div style="position:absolute;top:12971;left:130"><nobr>ready to accept input. In all-stop mode, after con-</nobr></div>
+<div style="position:absolute;top:12991;left:130"><nobr>tinuing the target and outputting a ^running re-</nobr></div>
+<div style="position:absolute;top:13012;left:130"><nobr>sponse, a prompt was printed even though GDB is</nobr></div>
+<div style="position:absolute;top:13032;left:130"><nobr>not ready to accept input until after a subsequent</nobr></div>
+<div style="position:absolute;top:13056;left:130"><nobr>*stopped event.</nobr></div>
+<div style="position:absolute;top:13082;left:130"><nobr>This inconsistency becomes problematic when</nobr></div>
+<div style="position:absolute;top:13102;left:130"><nobr>non-stop mode is available. The consumer needs</nobr></div>
+<div style="position:absolute;top:13122;left:130"><nobr>to know unambiguously when GDB is ready to ac-</nobr></div>
+<div style="position:absolute;top:13143;left:130"><nobr>cept input.</nobr></div>
+<div style="position:absolute;top:12146;left:505"><nobr>• A *stopped event provided the identification</nobr></div>
+<div style="position:absolute;top:12167;left:521"><nobr>number of the previous command. This is suffi-</nobr></div>
+<div style="position:absolute;top:12187;left:521"><nobr>cient in all-stop mode, as it must have been the</nobr></div>
+<div style="position:absolute;top:12208;left:521"><nobr>previous command that resumed the program lead-</nobr></div>
+<div style="position:absolute;top:12228;left:521"><nobr>ing to the stopped event. In non-stop mode that</nobr></div>
+<div style="position:absolute;top:12248;left:521"><nobr>is no longer true. Indeed it may be impossible</nobr></div>
+<div style="position:absolute;top:12269;left:521"><nobr>to determine which command was responsible for</nobr></div>
+<div style="position:absolute;top:12289;left:521"><nobr>initiating execution causing the *stopped event.</nobr></div>
+<div style="position:absolute;top:12309;left:521"><nobr>Therefore events no longer echo the previous com-</nobr></div>
+<div style="position:absolute;top:12330;left:521"><nobr>mand’s identification.</nobr></div>
+<div style="position:absolute;top:12363;left:505"><nobr>• MI commands that operate on the current thread</nobr></div>
+<div style="position:absolute;top:12384;left:521"><nobr>were susceptible to the race condition described</nobr></div>
+<div style="position:absolute;top:12405;left:521"><nobr>earlier in this section. To correct this all MI com-</nobr></div>
+<div style="position:absolute;top:12425;left:521"><nobr>mands that are thread-specific now have an addi-</nobr></div>
+<div style="position:absolute;top:12445;left:521"><nobr>tional thread identifier option.</nobr></div>
+<div style="position:absolute;top:12473;left:521"><nobr>The removal of state may simplify the IDE that</nobr></div>
+<div style="position:absolute;top:12493;left:521"><nobr>is using GDB. For instance there are places in</nobr></div>
+<div style="position:absolute;top:12513;left:521"><nobr>Eclipse[11] where the current thread is temporar-</nobr></div>
+<div style="position:absolute;top:12534;left:521"><nobr>ily changed to perform a sequence of commands</nobr></div>
+<div style="position:absolute;top:12554;left:521"><nobr>and then changed back. Making the MI interface</nobr></div>
+<div style="position:absolute;top:12574;left:521"><nobr>stateless helps reduce confusion between the IDE</nobr></div>
+<div style="position:absolute;top:12595;left:521"><nobr>and GDB.</nobr></div>
+<div style="position:absolute;top:12628;left:505"><nobr>• The ^running response can only be output in re-</nobr></div>
+<div style="position:absolute;top:12649;left:521"><nobr>sponse to a continue. However, it is possible for</nobr></div>
+<div style="position:absolute;top:12670;left:521"><nobr>a breakpoint action to resume different threads. In</nobr></div>
+<div style="position:absolute;top:12690;left:521"><nobr>all-stop mode the IDE can examine threads when</nobr></div>
+<div style="position:absolute;top:12710;left:521"><nobr>GDB stops. In non-stop mode, the IDE needs to</nobr></div>
+<div style="position:absolute;top:12731;left:521"><nobr>know which threads have been started and stopped</nobr></div>
+<div style="position:absolute;top:12751;left:521"><nobr>as time progresses. An additional *running</nobr></div>
+<div style="position:absolute;top:12771;left:521"><nobr>event has been added to support this dynamic be-</nobr></div>
+<div style="position:absolute;top:12792;left:521"><nobr>havior.</nobr></div>
+<div style="position:absolute;top:12846;left:489"><nobr>Before executing any command that affects thread run</nobr></div>
+<div style="position:absolute;top:12866;left:489"><nobr>control, GDB needs to determine if that thread is cur-</nobr></div>
+<div style="position:absolute;top:12886;left:489"><nobr>rently executing. If it is, the command is rejected.</nobr></div>
+<div style="position:absolute;top:12922;left:489"><nobr>It should be emphasized that in non-stop mode, clarity</nobr></div>
+<div style="position:absolute;top:12943;left:489"><nobr>and correctness of MI is very important; hence the need</nobr></div>
+<div style="position:absolute;top:12963;left:489"><nobr>for additional notifications. We implemented changes to</nobr></div>
+<div style="position:absolute;top:12983;left:489"><nobr>make variable object commands work in threaded pro-</nobr></div>
+<div style="position:absolute;top:13003;left:489"><nobr>grams, and also some internal changes to improve the</nobr></div>
+<div style="position:absolute;top:13024;left:489"><nobr>structure of MI processing code.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:13076;left:489"><nobr>10 Future Directions</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:13122;left:489"><nobr>With non-stop debugging in place it becomes feasible</nobr></div>
+<div style="position:absolute;top:13143;left:489"><nobr>to use GDB for multi-process or multi-core debugging.</nobr></div>
+<div style="position:absolute;top:13187;left:467"><nobr>10</nobr></div>
+</span></font>
+
+<div style="position:absolute;top:13243;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="12"><b>Page 12</b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:13335;left:97"><nobr>Existing solutions to this often involve a single GDB</nobr></div>
+<div style="position:absolute;top:13355;left:97"><nobr>instance per process or core. They use an IDE to deal</nobr></div>
+<div style="position:absolute;top:13375;left:97"><nobr>with the synchronization between the GDB instances.</nobr></div>
+<div style="position:absolute;top:13396;left:97"><nobr>This is tractable for a few processes or a few cores,</nobr></div>
+<div style="position:absolute;top:13416;left:97"><nobr>but quickly runs into scalability issues. Running tens</nobr></div>
+<div style="position:absolute;top:13436;left:97"><nobr>of GDB instances on the host and tens of GDB servers</nobr></div>
+<div style="position:absolute;top:13457;left:97"><nobr>on the targets quickly uses up resources. From GDB’s</nobr></div>
+<div style="position:absolute;top:13477;left:97"><nobr>point of view, separate processes are just like separate</nobr></div>
+<div style="position:absolute;top:13497;left:97"><nobr>threads except that they may run in their own address</nobr></div>
+<div style="position:absolute;top:13518;left:97"><nobr>spaces (depending on the operating system). As sepa-</nobr></div>
+<div style="position:absolute;top:13538;left:97"><nobr>rate processes can run different programs, GDB’s pro-</nobr></div>
+<div style="position:absolute;top:13558;left:97"><nobr>gram loader must manage multiple programs. However,</nobr></div>
+<div style="position:absolute;top:13579;left:97"><nobr>it can already do this for single address-space systems</nobr></div>
+<div style="position:absolute;top:13599;left:97"><nobr>due to the work we have already contributed. It will not</nobr></div>
+<div style="position:absolute;top:13619;left:97"><nobr>be overly complicated to add process identification to</nobr></div>
+<div style="position:absolute;top:13640;left:97"><nobr>program state and use that for memory accesses. Pro-</nobr></div>
+<div style="position:absolute;top:13660;left:97"><nobr>cesses can show up as an additional level in the now fa-</nobr></div>
+<div style="position:absolute;top:13680;left:97"><nobr>miliar view of a program consisting of multiple threads.</nobr></div>
+<div style="position:absolute;top:13714;left:97"><nobr>This arrangement allows GDB to take care of program</nobr></div>
+<div style="position:absolute;top:13734;left:97"><nobr>synchronization, and leaves the IDE free to focus on</nobr></div>
+<div style="position:absolute;top:13754;left:97"><nobr>data presentation and user interaction.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:13800;left:97"><nobr>11 Acknowledgements</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:13843;left:97"><nobr>We thank Ericsson for sponsoring this work. Dominique</nobr></div>
+<div style="position:absolute;top:13863;left:97"><nobr>Toupin &lt;dominique.toupin@ericsson.com&gt; would like</nobr></div>
+<div style="position:absolute;top:13883;left:97"><nobr>to hear from people interested in leveraging this work</nobr></div>
+<div style="position:absolute;top:13904;left:97"><nobr>for other functionality or to collaborate on additional</nobr></div>
+<div style="position:absolute;top:13924;left:97"><nobr>GDB improvements.</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:13970;left:97"><nobr>References</nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:14005;left:105"><nobr>[1] GDB Home Page, http://sourceware.</nobr></div>
+<div style="position:absolute;top:14027;left:133"><nobr>org/gdb/</nobr></div>
+<div style="position:absolute;top:14058;left:105"><nobr>[2] The GNU Project, http://www.gnu.org/</nobr></div>
+<div style="position:absolute;top:14091;left:105"><nobr>[3] The Free Software Foundation, http:www.</nobr></div>
+<div style="position:absolute;top:14112;left:133"><nobr>fsf.org</nobr></div>
+<div style="position:absolute;top:14144;left:105"><nobr>[4] Ptrace system call, man ptrace</nobr></div>
+<div style="position:absolute;top:14176;left:105"><nobr>[5] QEMU Open Source Processor Emulator,</nobr></div>
+<div style="position:absolute;top:14197;left:133"><nobr>http://fabrice.bellard.free.fr/</nobr></div>
+<div style="position:absolute;top:14218;left:133"><nobr>qemu/index.html</nobr></div>
+<div style="position:absolute;top:14249;left:105"><nobr>[6] Probing the Guts of Kprobes, A. Mavinakayana-</nobr></div>
+<div style="position:absolute;top:14270;left:133"><nobr>halli, P. Panchamukhi, J. Keniston, A. Keshava-</nobr></div>
+<div style="position:absolute;top:14290;left:133"><nobr>murthy, &amp; M. Hiramatsu, Linux Symposium 2006,</nobr></div>
+<div style="position:absolute;top:14311;left:133"><nobr>http://www.linuxsymposium.org/</nobr></div>
+<div style="position:absolute;top:14331;left:133"><nobr>2006/linuxsymposium_procv2.pdf</nobr></div>
+<div style="position:absolute;top:13335;left:497"><nobr>[7] Async patch (no. 4), Nick Roberts, http:</nobr></div>
+<div style="position:absolute;top:13356;left:524"><nobr>//sourceware.org/ml/gdb-patches/</nobr></div>
+<div style="position:absolute;top:13376;left:524"><nobr>2006-10/msg00252.html</nobr></div>
+<div style="position:absolute;top:13409;left:497"><nobr>[8] Non-stop multi-threaded debugging, Jim Blandy,</nobr></div>
+<div style="position:absolute;top:13430;left:524"><nobr>http://sourceware.org/ml/gdb/</nobr></div>
+<div style="position:absolute;top:13451;left:524"><nobr>2007-11/msg00198.html</nobr></div>
+<div style="position:absolute;top:13484;left:497"><nobr>[9] Debugger Machine Interface, http://www.</nobr></div>
+<div style="position:absolute;top:13505;left:524"><nobr>linux-foundation.org/en/DMI</nobr></div>
+<div style="position:absolute;top:13538;left:489"><nobr>[10] MI non-stop mode specification, Vladimir</nobr></div>
+<div style="position:absolute;top:13558;left:524"><nobr>Prus, http://sourceware.org/ml/gdb/</nobr></div>
+<div style="position:absolute;top:13579;left:524"><nobr>2008-03/msg00147.html</nobr></div>
+<div style="position:absolute;top:13612;left:489"><nobr>[11] The Eclipse Project, http://www.eclipse.</nobr></div>
+<div style="position:absolute;top:13633;left:524"><nobr>org</nobr></div>
+<div style="position:absolute;top:14375;left:467"><nobr>11</nobr></div>
+</span></font>
+
+
+</div></body></html>
